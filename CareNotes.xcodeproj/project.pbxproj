@@ -7,23 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4FAEAD29A1E2E300BE3083 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FAEAC29A1E2E300BE3083 /* JournalTableViewController.swift */; };
+		2E4FAEAF29A1ED5000BE3083 /* NewVitalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FAEAE29A1ED5000BE3083 /* NewVitalsTableViewController.swift */; };
+		840D08A429A1AB30006233E1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A329A1AB30006233E1 /* Utils.swift */; };
+		840D08A629A2CCD5006233E1 /* AddNewVitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */; };
+		840D08A829A2D1E6006233E1 /* AddNewSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */; };
+		840D08AA29A2E12C006233E1 /* CreateNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A929A2E12C006233E1 /* CreateNewUserViewController.swift */; };
+		843FAF27299EF980001A404A /* NewEntryViewCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF26299EF980001A404A /* NewEntryViewCont.swift */; };
+		843FAF2F299F35EB001A404A /* DataMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF2E299F35EB001A404A /* DataMgr.swift */; };
+		843FAF3329A024FB001A404A /* JournalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF3229A024FB001A404A /* JournalHeaderView.swift */; };
+		843FAF3529A02B62001A404A /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF3429A02B62001A404A /* JournalEntry.swift */; };
+		843FAF3B29A04439001A404A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF3A29A04439001A404A /* User.swift */; };
+		843FAF3F29A09181001A404A /* SelectUserViewCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF3E29A09181001A404A /* SelectUserViewCont.swift */; };
+		845C2EB629A695450045E820 /* ManageUsersTableViewCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C2EB529A695450045E820 /* ManageUsersTableViewCont.swift */; };
+		845C2EB829A7D0F60045E820 /* UserDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C2EB729A7D0F60045E820 /* UserDetailsTableViewController.swift */; };
 		845D3D5A299DAEE100346DE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D59299DAEE100346DE4 /* AppDelegate.swift */; };
 		845D3D5C299DAEE100346DE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D5B299DAEE100346DE4 /* SceneDelegate.swift */; };
-		845D3D5E299DAEE100346DE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D5D299DAEE100346DE4 /* ViewController.swift */; };
+		845D3D5E299DAEE100346DE4 /* SetupViewCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D5D299DAEE100346DE4 /* SetupViewCont.swift */; };
 		845D3D61299DAEE100346DE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D5F299DAEE100346DE4 /* Main.storyboard */; };
 		845D3D63299DAEE300346DE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D62299DAEE300346DE4 /* Assets.xcassets */; };
 		845D3D66299DAEE300346DE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D64299DAEE300346DE4 /* LaunchScreen.storyboard */; };
+		845D3D7D299DE7E600346DE4 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D3D7B299DE7E600346DE4 /* QuoteTableViewCell.swift */; };
+		845D3D7E299DE7E600346DE4 /* QuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845D3D7C299DE7E600346DE4 /* QuoteTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E4FAEAC29A1E2E300BE3083 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
+		2E4FAEAE29A1ED5000BE3083 /* NewVitalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVitalsTableViewController.swift; sourceTree = "<group>"; };
+		840D08A329A1AB30006233E1 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVitalViewController.swift; sourceTree = "<group>"; };
+		840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSymptomViewController.swift; sourceTree = "<group>"; };
+		840D08A929A2E12C006233E1 /* CreateNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUserViewController.swift; sourceTree = "<group>"; };
+		843FAF26299EF980001A404A /* NewEntryViewCont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewCont.swift; sourceTree = "<group>"; };
+		843FAF2E299F35EB001A404A /* DataMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMgr.swift; sourceTree = "<group>"; };
+		843FAF3229A024FB001A404A /* JournalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalHeaderView.swift; sourceTree = "<group>"; };
+		843FAF3429A02B62001A404A /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		843FAF3A29A04439001A404A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		843FAF3E29A09181001A404A /* SelectUserViewCont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewCont.swift; sourceTree = "<group>"; };
+		845C2EB529A695450045E820 /* ManageUsersTableViewCont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUsersTableViewCont.swift; sourceTree = "<group>"; };
+		845C2EB729A7D0F60045E820 /* UserDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailsTableViewController.swift; path = "../../../.Trash/CareNotes 5.24.07 PM/CareNotes/Users/UserDetailsTableViewController.swift"; sourceTree = "<group>"; };
 		845D3D56299DAEE100346DE4 /* CareNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D3D59299DAEE100346DE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845D3D5B299DAEE100346DE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		845D3D5D299DAEE100346DE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		845D3D5D299DAEE100346DE4 /* SetupViewCont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewCont.swift; sourceTree = "<group>"; };
 		845D3D60299DAEE100346DE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845D3D62299DAEE300346DE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845D3D65299DAEE300346DE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845D3D67299DAEE300346DE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845D3D7B299DE7E600346DE4 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
+		845D3D7C299DE7E600346DE4 /* QuoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +69,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		843FAF3629A04287001A404A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				843FAF2E299F35EB001A404A /* DataMgr.swift */,
+				843FAF3429A02B62001A404A /* JournalEntry.swift */,
+				843FAF3A29A04439001A404A /* User.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		843FAF3729A042DF001A404A /* General */ = {
+			isa = PBXGroup;
+			children = (
+				845D3D5B299DAEE100346DE4 /* SceneDelegate.swift */,
+				845D3D59299DAEE100346DE4 /* AppDelegate.swift */,
+				845D3D64299DAEE300346DE4 /* LaunchScreen.storyboard */,
+				845D3D5F299DAEE100346DE4 /* Main.storyboard */,
+				845D3D62299DAEE300346DE4 /* Assets.xcassets */,
+				840D08A329A1AB30006233E1 /* Utils.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		843FAF3829A04350001A404A /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				843FAF3229A024FB001A404A /* JournalHeaderView.swift */,
+				2E4FAEAC29A1E2E300BE3083 /* JournalTableViewController.swift */,
+				843FAF26299EF980001A404A /* NewEntryViewCont.swift */,
+				845D3D7B299DE7E600346DE4 /* QuoteTableViewCell.swift */,
+				845D3D7C299DE7E600346DE4 /* QuoteTableViewCell.xib */,
+				2E4FAEAE29A1ED5000BE3083 /* NewVitalsTableViewController.swift */,
+				840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */,
+				840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		843FAF3929A04367001A404A /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				845D3D5D299DAEE100346DE4 /* SetupViewCont.swift */,
+				843FAF3E29A09181001A404A /* SelectUserViewCont.swift */,
+				840D08A929A2E12C006233E1 /* CreateNewUserViewController.swift */,
+				845C2EB529A695450045E820 /* ManageUsersTableViewCont.swift */,
+				845C2EB729A7D0F60045E820 /* UserDetailsTableViewController.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		845D3D4D299DAEE100346DE4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +138,11 @@
 		845D3D58299DAEE100346DE4 /* CareNotes */ = {
 			isa = PBXGroup;
 			children = (
-				845D3D59299DAEE100346DE4 /* AppDelegate.swift */,
-				845D3D5B299DAEE100346DE4 /* SceneDelegate.swift */,
-				845D3D5D299DAEE100346DE4 /* ViewController.swift */,
-				845D3D5F299DAEE100346DE4 /* Main.storyboard */,
-				845D3D62299DAEE300346DE4 /* Assets.xcassets */,
-				845D3D64299DAEE300346DE4 /* LaunchScreen.storyboard */,
 				845D3D67299DAEE300346DE4 /* Info.plist */,
+				843FAF3629A04287001A404A /* Data */,
+				843FAF3729A042DF001A404A /* General */,
+				843FAF3829A04350001A404A /* Journal */,
+				843FAF3929A04367001A404A /* Users */,
 			);
 			path = CareNotes;
 			sourceTree = "<group>";
@@ -128,6 +208,7 @@
 				845D3D66299DAEE300346DE4 /* LaunchScreen.storyboard in Resources */,
 				845D3D63299DAEE300346DE4 /* Assets.xcassets in Resources */,
 				845D3D61299DAEE100346DE4 /* Main.storyboard in Resources */,
+				845D3D7E299DE7E600346DE4 /* QuoteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +219,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845D3D5E299DAEE100346DE4 /* ViewController.swift in Sources */,
+				843FAF3F29A09181001A404A /* SelectUserViewCont.swift in Sources */,
+				840D08A429A1AB30006233E1 /* Utils.swift in Sources */,
+				843FAF2F299F35EB001A404A /* DataMgr.swift in Sources */,
+				2E4FAEAF29A1ED5000BE3083 /* NewVitalsTableViewController.swift in Sources */,
+				843FAF3529A02B62001A404A /* JournalEntry.swift in Sources */,
+				2E4FAEAD29A1E2E300BE3083 /* JournalTableViewController.swift in Sources */,
+				845D3D5E299DAEE100346DE4 /* SetupViewCont.swift in Sources */,
+				845D3D7D299DE7E600346DE4 /* QuoteTableViewCell.swift in Sources */,
+				840D08AA29A2E12C006233E1 /* CreateNewUserViewController.swift in Sources */,
+				840D08A829A2D1E6006233E1 /* AddNewSymptomViewController.swift in Sources */,
+				843FAF3329A024FB001A404A /* JournalHeaderView.swift in Sources */,
+				845C2EB629A695450045E820 /* ManageUsersTableViewCont.swift in Sources */,
 				845D3D5A299DAEE100346DE4 /* AppDelegate.swift in Sources */,
+				843FAF27299EF980001A404A /* NewEntryViewCont.swift in Sources */,
 				845D3D5C299DAEE100346DE4 /* SceneDelegate.swift in Sources */,
+				840D08A629A2CCD5006233E1 /* AddNewVitalViewController.swift in Sources */,
+				843FAF3B29A04439001A404A /* User.swift in Sources */,
+				845C2EB829A7D0F60045E820 /* UserDetailsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
