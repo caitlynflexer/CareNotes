@@ -37,16 +37,33 @@ class AddNewSymptomViewController: UIViewController, UITextFieldDelegate {
     
     func save() {
         let newSymptom = symptomTextField.text?.trim()
-        if (!newSymptom!.isEmpty) {
-            DataMgr.instance().addSymptom(symptom: newSymptom!)
+        
+        let symptoms = DataMgr.instance().getSymptoms()
+        var symptomExists = false
+        
+        for symptom in symptoms {
+            if (symptom == newSymptom) {
+                showDialog()
+                symptomExists = true
+            }
         }
-        goBack()
+        
+        if (symptomExists == false) {
+            if (!newSymptom!.isEmpty) {
+                DataMgr.instance().addSymptom(symptom: newSymptom!)
+            }
+            goBack()
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        if (!textField.text!.trim().isEmpty) {
-            self.navigationItem.rightBarButtonItem?.isEnabled = true
-        }
+        self.navigationItem.rightBarButtonItem?.isEnabled = !textField.text!.trim().isEmpty
+    }
+    
+    func showDialog() {
+        let alert = UIAlertController(title: nil, message: "Symptom already exists. Please add a different symptom.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 
 }

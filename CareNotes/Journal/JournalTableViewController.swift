@@ -9,7 +9,7 @@ import UIKit
 
 class JournalTableViewController: UITableViewController {
     
-    let quoteCellReuseIdentifier = "quoteCellReuseIdentifier"
+    let centralCellReuseIdentifier = "centralCellReuseIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class JournalTableViewController: UITableViewController {
         }
         
         // table view 
-        tableView.register(UINib(nibName: String(describing: QuoteTableViewCell.self), bundle: nil), forCellReuseIdentifier: quoteCellReuseIdentifier)
+        tableView.register(UINib(nibName: String(describing: CentralTableViewCell.self), bundle: nil), forCellReuseIdentifier: centralCellReuseIdentifier)
         tableView.rowHeight  = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
         tableView.register(JournalHeaderView.self, forHeaderFooterViewReuseIdentifier: JournalHeaderView.identifier)
@@ -70,31 +70,39 @@ class JournalTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return DataMgr.instance().getNumSections()
+        return DataMgr.instance().getNumJournalEntries() == 0 ? 1 : DataMgr.instance().getNumSections()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataMgr.instance().numRowsInSection(sectionIndex: section)
+        return DataMgr.instance().getNumJournalEntries() == 0 ? 1 : DataMgr.instance().numRowsInSection(sectionIndex: section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: quoteCellReuseIdentifier, for: indexPath) as! QuoteTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: centralCellReuseIdentifier, for: indexPath) as! CentralTableViewCell
         
-        let journalEntry = DataMgr.instance().getJournalEntry(section: indexPath.section, row: indexPath.row)
-        cell.userLabel?.text = journalEntry.getUser()
-        cell.journalEntry?.text = journalEntry.getDisplayText()
-        cell.time?.text = journalEntry.getTimeStr()
-        
+        if (DataMgr.instance().getNumJournalEntries() == 0) {
+            cell.userLabel?.text = ""
+            cell.journalEntry?.textColor = UIColor.gray
+            cell.journalEntry?.textAlignment = .center
+            cell.journalEntry?.text = "Tap icons above to create entries"
+            cell.time?.text = ""
+        } else {
+            let journalEntry = DataMgr.instance().getJournalEntry(section: indexPath.section, row: indexPath.row)
+            cell.userLabel?.text = journalEntry.getUser()
+            cell.journalEntry?.textAlignment = .left
+            cell.journalEntry?.textColor = UIColor.black
+            cell.journalEntry?.text = journalEntry.getDisplayText()
+            cell.time?.text = journalEntry.getTimeStr()
+        }
+        cell.selectionStyle = .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: JournalHeaderView.identifier) as? JournalHeaderView
-        header?.configure(text: DataMgr.instance().getJournalEntry(section: section, row: 0).getDateStr())
+        if (DataMgr.instance().getNumJournalEntries() != 0) {
+            header?.configure(text: DataMgr.instance().getJournalEntry(section: section, row: 0).getDateStr())
+        }
         return header
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

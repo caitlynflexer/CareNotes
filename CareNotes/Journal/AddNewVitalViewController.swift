@@ -10,6 +10,7 @@ import UIKit
 class AddNewVitalViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var vitalTextField: UITextField!
+    @IBOutlet weak var unitsTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class AddNewVitalViewController: UIViewController, UITextFieldDelegate {
         
         vitalTextField.becomeFirstResponder()
         vitalTextField.addTarget(self, action: #selector(SetupViewCont.textFieldDidChange(_:)), for: .editingChanged)
+        unitsTextField.addTarget(self, action: #selector(SetupViewCont.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
@@ -36,19 +38,34 @@ class AddNewVitalViewController: UIViewController, UITextFieldDelegate {
     }
     
     func save() {
-        let newVital = vitalTextField.text?.trim()
-        if (!newVital!.isEmpty) {
-            DataMgr.instance().addVitals(vital: newVital!)
+        let newVital = (vitalTextField.text?.trim())!
+        let newUnit = unitsTextField.text != "" ? unitsTextField.text?.trim() : ""
+        
+        let vitals = DataMgr.instance().getVitals()
+        var vitalExists = false
+        
+        for vital in vitals {
+            if (vital.getVitalName() == newVital) {
+                showDialog()
+                vitalExists = true
+            }
         }
-        goBack()
+        
+        if (vitalExists == false) {
+            DataMgr.instance().addVitals(vital: Vital(_vitalName : newVital, _units : newUnit!))
+            goBack()
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        if (!textField.text!.trim().isEmpty) {
-            self.navigationItem.rightBarButtonItem?.isEnabled = true
-        }
+        self.navigationItem.rightBarButtonItem?.isEnabled = !vitalTextField.text!.trim().isEmpty
     }
-
+    
+    func showDialog() {
+        let alert = UIAlertController(title: nil, message: "Vital already exists. Please add a different vital.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 

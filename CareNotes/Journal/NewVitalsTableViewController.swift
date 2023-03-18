@@ -56,6 +56,7 @@ class NewVitalsTableViewController: UITableViewController {
             
             let date = Date.now
             if (selectedSymptoms.count > 0 || vitalValues.count > 0) {
+                
                 let journalEntry = JournalEntry(_text: "", _user: DataMgr.instance().getCurrentUser()!.getUserName(), _dateAndTime: date, _vitals: vitalValues, _symptoms: selectedSymptoms)
                 DataMgr.instance().addJournalEntry(entry: journalEntry)
             }
@@ -66,9 +67,11 @@ class NewVitalsTableViewController: UITableViewController {
     
     @objc public func textFieldDidChange(_ textField: UITextField) {
         // store new value every on key stroke
-        let value : String = textField.text?.trim() ?? ""
         let vital : String = textField.accessibilityIdentifier!
-        
+        var value : String = textField.text?.trim() ?? ""
+        if (value != "") {
+            value += " " + DataMgr.instance().getVitalUnit(vital: vital)
+        }        
         self.vitalValues[vital] = value
     }
     
@@ -88,13 +91,18 @@ class NewVitalsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0) {
             let vitalCell = tableView.dequeueReusableCell(withIdentifier: "vitalCell", for: indexPath)
-            vitalCell.textLabel?.text = DataMgr.instance().getVitals()[indexPath.row] + ": "
+            
+            if (DataMgr.instance().getVitals()[indexPath.row].getUnits() != "") {
+                vitalCell.textLabel?.text = DataMgr.instance().getVitals()[indexPath.row].getVitalName() + " (" + DataMgr.instance().getVitals()[indexPath.row].getUnits() + "): "
+            } else {
+                vitalCell.textLabel?.text = DataMgr.instance().getVitals()[indexPath.row].getVitalName()
+            }
             vitalCell.selectionStyle = .none
             
             if (editMode == false) {
                 vitalCell.contentView.subviews[0].isHidden = false
                 let textField:UITextField = vitalCell.contentView.subviews[0] as! UITextField
-                let vital = DataMgr.instance().getVitals()[indexPath.row]
+                let vital = DataMgr.instance().getVitals()[indexPath.row].getVitalName()
                 textField.accessibilityIdentifier = vital
                 textField.text = (vitalValues[vital] != nil) ? vitalValues[vital] : ""
                 textField.addTarget(self, action: #selector(NewVitalsTableViewController.textFieldDidChange(_:)), for: .editingChanged)
@@ -221,9 +229,9 @@ class NewVitalsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if (sourceIndexPath.section == destinationIndexPath.section) {
             if (sourceIndexPath.section == 0) {
-                let movedObject = DataMgr.instance().getVitals()[sourceIndexPath.row]
+                let movedVital = DataMgr.instance().getVitals()[sourceIndexPath.row]
                 DataMgr.instance().removeVital(index: sourceIndexPath.row)
-                DataMgr.instance().insertVital(vital: movedObject, index: destinationIndexPath.row)
+                DataMgr.instance().insertVital(vital: movedVital, index: destinationIndexPath.row)
             } else {
                 let movedObject = DataMgr.instance().getSymptoms()[sourceIndexPath.row]
                 DataMgr.instance().removeSymptom(index: sourceIndexPath.row)

@@ -1,5 +1,5 @@
 //
-//  QuoteTableViewCell.swift
+//  CentralTableViewCell.swift
 //  CareNotes
 //
 //  Created by Caitlyn Flexer on 2/15/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuoteTableViewCell: UITableViewCell {
+class CentralTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var userLabel: UILabel!

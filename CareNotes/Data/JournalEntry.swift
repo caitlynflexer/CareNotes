@@ -73,16 +73,32 @@ public class JournalEntry {
         if (vitals.count > 0) {
             var vitalsString = ""
             let numVitals = DataMgr.instance().getVitals().count
+            var allVitals : [String] = []
+
             for i in 0...numVitals - 1 {
-                let vital = DataMgr.instance().getVitals()[i]
-                let value : String = vitals[vital] ?? ""
+                let vital : String = DataMgr.instance().getVitals()[i].getVitalName()
+                let value : String =  vitals[vital] ?? ""
                 if (!value.isEmpty) {
                     if (!vitalsString.isEmpty) {
                         vitalsString += ", "
                     }
                     vitalsString += vital + ": " + value
                 }
+                allVitals.append(vital)
             }
+        
+            
+            for (vitalName, value) in vitals {
+                if (!allVitals.contains(vitalName)) {
+                    if (!value.isEmpty) {
+                        if (!vitalsString.isEmpty) {
+                            vitalsString += ", "
+                        }
+                        vitalsString += vitalName + ": " + value
+                    }
+                }
+            }
+            
             if (!vitalsString.isEmpty) {
                 if (!displayText.isEmpty) {
                     displayText += "\n"
@@ -116,9 +132,5 @@ public class JournalEntry {
         }
             
         return dict
-    }
-    
-    public func importData() {
-        print("hi")
     }
 }

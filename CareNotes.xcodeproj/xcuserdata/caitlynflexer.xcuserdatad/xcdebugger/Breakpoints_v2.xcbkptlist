@@ -270,8 +270,8 @@
             filePath = "CareNotes/Data/DataMgr.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "dataChanged()"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "CareNotes/Journal/NewEntryViewCont.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "save()"
             landmarkType = "7">
             <Locations>
@@ -334,24 +334,8 @@
             filePath = "CareNotes/Data/DataMgr.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "importFromFile()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E83434CE-BB27-4BF1-B49E-8E6F705E18FA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CareNotes/Data/DataMgr.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "importFromFile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,8 +366,8 @@
             filePath = "CareNotes/Data/DataMgr.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "importFromFile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -401,6 +385,70 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "editBtnClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E91D061-AD96-4A1C-89E5-CF19AAEA6239"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Journal/NewVitalsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "textFieldDidChange(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E91D061-AD96-4A1C-89E5-CF19AAEA6239 - 317b204fe41d44da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.NewVitalsTableViewController.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/NewVitalsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  uuid = "1E91D061-AD96-4A1C-89E5-CF19AAEA6239 - 317b204fe41d44da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.NewVitalsTableViewController.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/NewVitalsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "187">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C32A191-C42A-494D-BA1E-5B90E65038AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Data/DataMgr.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "getVitalUnit(vital:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

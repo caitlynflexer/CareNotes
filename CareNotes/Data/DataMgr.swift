@@ -13,7 +13,8 @@ public class DataMgr {
     private var users: [User] = []
     
     private var symptoms = ["Fatigue", "Leg pain", "Headache", "Fever", "Muscle cramps"]
-    private var vitals = ["Weight", "O2 level", "Temperature", "Blood Pressure"]
+    
+    private var vitals = [Vital(_vitalName : "Weight", _units : "lbs"), Vital(_vitalName : "O2 level", _units : "%"), Vital(_vitalName : "Temperature", _units : "˚F"), Vital(_vitalName : "Blood Pressure", _units : "mmHg")]
     
     private var careRecipientName: String = ""
     
@@ -56,6 +57,10 @@ public class DataMgr {
         else {
             return journalEntries[0]
         }
+    }
+    
+    func getNumJournalEntries() -> Int {
+        return journalEntries.count
     }
     
     func addJournalEntry(entry: JournalEntry) {
@@ -169,18 +174,36 @@ public class DataMgr {
         dataChanged()
     }
     
-    func insertVital(vital: String, index: Int) {
+    func insertVital(vital: Vital, index: Int) {
         vitals.insert(vital, at: index)
         dataChanged()
     }
     
-    func addVitals(vital: String) {
+    func addVitals(vital: Vital) {
         vitals.append(vital)
         dataChanged()
     }
     
-    func getVitals() -> [String] {
+    func getVitals() -> [Vital] {
         return vitals
+    }
+    
+    func getVitalIndex(vital : String) -> Int {
+        for i in 0...vitals.count - 1 {
+            if (vitals[i].getVitalName() == vital) {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    func getVitalUnit(vital : String) -> String {
+        for i in 0...vitals.count - 1 {
+            if (vitals[i].getVitalName() == vital) {
+                return vitals[i].getUnits()
+            }
+        }
+        return ""
     }
     
     func getNumSections() -> Int {
@@ -226,12 +249,17 @@ public class DataMgr {
             userData.append(user.export())
         }
         
+        var vitalsList : [Any] = []
+        for vital in vitals {
+            vitalsList.append(vital.export())
+        }
+        
         var journalData : [Any] = []
         for journal in journalEntries {
             journalData.append(journal.export())
         }
         
-        let dict : [String: Any] = ["Users" : userData, "Symptoms":  symptoms, "Vitals" : vitals, "Journal Entries" : journalData, "Care Recipient Name" : careRecipientName]
+        let dict : [String: Any] = ["Users" : userData, "Symptoms":  symptoms, "Vitals" : vitalsList, "Journal Entries" : journalData, "Care Recipient Name" : careRecipientName]
 
         do {
             try
@@ -246,16 +274,21 @@ public class DataMgr {
     }
     
     func importFromFile() -> Void {
-        print("hello there")
         do {
             if let json = try JSONSerialization.loadJSON(withFilename: "careNotesData") as? Dictionary<String, Any> {
                 
                 if let symptomData = json["Symptoms"] as? [String] {
                     symptoms = symptomData
                 }
-                if let vitalData = json["Vitals"] as? [String] {
-                    vitals = vitalData
+                
+                vitals.removeAll()
+                if let vitalData = json["Vitals"] as? [Any] {
+                    for vital in vitalData {
+                        let vitalInfo : [String : Any] = vital as! [String : Any]
+                        vitals.append(Vital (vitalInfo: vitalInfo))
+                    }
                 }
+                
                 if let careRecipientNameData = json["Care Recipient Name"] as? String {
                     careRecipientName = careRecipientNameData
                 }

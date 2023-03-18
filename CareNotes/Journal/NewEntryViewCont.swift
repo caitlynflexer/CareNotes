@@ -46,12 +46,7 @@ class NewEntryViewCont: UIViewController {
     }
     
     func save() {
-        var date = Date.now
-//        if (DataMgr.instance().getNumSections() == 0) {
-//            date = Date.yesterday
-//        }
-        
-        let journalEntry = JournalEntry(_text: textView.text.trim(), _user: DataMgr.instance().getCurrentUser()!.getUserName(), _dateAndTime: date, _vitals: [:], _symptoms: [])
+        let journalEntry = JournalEntry(_text: textView.text.trim(), _user: DataMgr.instance().getCurrentUser()!.getUserName(), _dateAndTime: Date.now, _vitals: [:], _symptoms: [])
         DataMgr.instance().addJournalEntry(entry: journalEntry)
         goBack()
     }
@@ -68,12 +63,3 @@ extension NewEntryViewCont: UITextViewDelegate {
     }
 }
 
-extension Date {
-    static var yesterday: Date { return Date().dayBefore }
-    var dayBefore: Date {
-        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
-    }
-    var noon: Date {
-        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
-    }
-}
