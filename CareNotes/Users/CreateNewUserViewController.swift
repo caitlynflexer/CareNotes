@@ -19,8 +19,12 @@ class CreateNewUserViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action:#selector(NewVitalsTableViewController.saveBtnClicked(_:)))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
+        userNameTextField.addTarget(self, action: #selector(CreateNewUserViewController.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         userNameTextField.becomeFirstResponder()
-        userNameTextField.addTarget(self, action: #selector(SetupViewCont.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {

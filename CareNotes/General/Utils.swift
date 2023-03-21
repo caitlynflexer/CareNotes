@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func trim() -> String {
@@ -24,6 +25,18 @@ extension String {
 
         return date
 
+    }
+    
+}
+
+public extension UIDevice {
+
+    class var isPhone: Bool {
+        return UIDevice.current.userInterfaceIdiom == .phone
+    }
+
+    class var isPad: Bool {
+        return UIDevice.current.userInterfaceIdiom == .pad
     }
 }
 

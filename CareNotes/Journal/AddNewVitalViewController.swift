@@ -20,9 +20,13 @@ class AddNewVitalViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action:#selector(NewVitalsTableViewController.saveBtnClicked(_:)))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
+        vitalTextField.addTarget(self, action: #selector(AddNewVitalViewController.textFieldDidChange(_:)), for: .editingChanged)
+        unitsTextField.addTarget(self, action: #selector(AddNewVitalViewController.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         vitalTextField.becomeFirstResponder()
-        vitalTextField.addTarget(self, action: #selector(SetupViewCont.textFieldDidChange(_:)), for: .editingChanged)
-        unitsTextField.addTarget(self, action: #selector(SetupViewCont.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {

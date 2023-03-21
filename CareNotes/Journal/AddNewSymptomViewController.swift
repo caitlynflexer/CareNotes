@@ -19,8 +19,12 @@ class AddNewSymptomViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action:#selector(NewVitalsTableViewController.saveBtnClicked(_:)))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
+        symptomTextField.addTarget(self, action: #selector(AddNewSymptomViewController.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         symptomTextField.becomeFirstResponder()
-        symptomTextField.addTarget(self, action: #selector(SetupViewCont.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {

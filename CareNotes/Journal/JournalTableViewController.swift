@@ -15,8 +15,6 @@ class JournalTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // top bar
-        self.navigationItem.title = "Journal for " + DataMgr.instance().getPatientName()
-        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Log out", style: .plain, target: self, action: #selector(self.logOut(_:)))
         
         let newEntry = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(self.newEntryBtnClicked(_:)))
@@ -67,6 +65,9 @@ class JournalTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        
+        // set journal title here, as care recipient name may have been edited
+        self.navigationItem.title = "Journal for " + DataMgr.instance().getPatientName()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -93,6 +94,12 @@ class JournalTableViewController: UITableViewController {
             cell.journalEntry?.textColor = UIColor.black
             cell.journalEntry?.text = journalEntry.getDisplayText()
             cell.time?.text = journalEntry.getTimeStr()
+        }
+        
+        if (UIDevice.isPad) {
+            cell.userLabel?.font = UIFont.init(name: "Helvetica", size: 20)
+            cell.journalEntry?.font = UIFont.init(name: "Helvetica", size: 22)
+            cell.time?.font = UIFont.init(name: "Helvetica", size: 20)
         }
         cell.selectionStyle = .none
         return cell

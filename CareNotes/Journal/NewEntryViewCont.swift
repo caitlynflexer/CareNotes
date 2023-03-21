@@ -16,10 +16,13 @@ class NewEntryViewCont: UIViewController {
         textView.delegate = self
         textView.text = ""
         textView.textColor = UIColor.black
-        textView.becomeFirstResponder()
         textView.layer.borderWidth = 1
         textView.layer.borderColor = UIColor.black.cgColor
         textView.keyboardType = UIKeyboardType.default
+        
+        if (UIDevice.isPad) {
+            textView.font = UIFont(name: "Helvetica", size: 23)
+        }
         
         let saveButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: "saveBtnClicked:")
         saveButtonItem.isEnabled = false
@@ -31,6 +34,10 @@ class NewEntryViewCont: UIViewController {
         self.navigationItem.title = "New Journal Entry"
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textView.becomeFirstResponder()
+    }
 
     @IBAction func saveBtnClicked(_ sender: UIBarButtonItem) {
         save()

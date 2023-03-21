@@ -26,6 +26,7 @@ class NewVitalsTableViewController: UITableViewController {
         tableView.isEditing = true
         tableView.allowsMultipleSelectionDuringEditing = true
         tableView.register(JournalHeaderView.self, forHeaderFooterViewReuseIdentifier: JournalHeaderView.identifier)
+        
     }
 
     @IBAction func back(_ sender: UIBarButtonItem) {
@@ -75,6 +76,10 @@ class NewVitalsTableViewController: UITableViewController {
         self.vitalValues[vital] = value
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -82,6 +87,18 @@ class NewVitalsTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section ==  1) {
+            dismissKeyboard()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if (indexPath.section ==  1) {
+            dismissKeyboard()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,19 +119,37 @@ class NewVitalsTableViewController: UITableViewController {
             if (editMode == false) {
                 vitalCell.contentView.subviews[0].isHidden = false
                 let textField:UITextField = vitalCell.contentView.subviews[0] as! UITextField
+                
                 let vital = DataMgr.instance().getVitals()[indexPath.row].getVitalName()
                 textField.accessibilityIdentifier = vital
-                textField.text = (vitalValues[vital] != nil) ? vitalValues[vital] : ""
+                
+                
+                if let vitalStr = vitalValues[vital] {
+                    if vitalStr != "" {
+                        let units = DataMgr.instance().getVitals()[indexPath.row].getUnits()
+                        let endIndex = vitalStr.count - units.count - 1
+                        textField.text = String(vitalStr.prefix(endIndex))
+                    }
+                } else {
+                    textField.text = ""
+                }
+                
                 textField.addTarget(self, action: #selector(NewVitalsTableViewController.textFieldDidChange(_:)), for: .editingChanged)
                 textField.keyboardType = UIKeyboardType.numbersAndPunctuation
             } else {
                 vitalCell.contentView.subviews[0].isHidden = true
+            }
+            if (UIDevice.isPad) {
+                vitalCell.textLabel?.font = UIFont.init(name: "Helvetica", size: 22)
             }
             return vitalCell
             
         } else {
             let symptomCell = tableView.dequeueReusableCell(withIdentifier: "symptomCell", for: indexPath)
             symptomCell.textLabel?.text = DataMgr.instance().getSymptoms()[indexPath.row]
+            if (UIDevice.isPad) {
+                symptomCell.textLabel?.font = UIFont.init(name: "Helvetica", size: 22)
+            }
             return symptomCell
         }
     }

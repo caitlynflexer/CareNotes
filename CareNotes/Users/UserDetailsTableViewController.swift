@@ -71,6 +71,9 @@ class UserDetailsTableViewController: UITableViewController {
         
         if (property == "Name") {
             user.setUserName(newName : value)
+            if (user.getRole() == "Care Recipient") {
+                DataMgr.instance().setPatientName(name: value)
+            }
         }
     }
     
@@ -99,6 +102,10 @@ class UserDetailsTableViewController: UITableViewController {
                 cell.textLabel?.textAlignment = .center
                 cell.textLabel?.text = "Delete User"
             }
+        }
+        
+        if (UIDevice.isPad) {
+            cell.textLabel?.font = UIFont.init(name: "Helvetica", size: 25)
         }
         
         if (indexPath.row >= 1 || editMode == false) {

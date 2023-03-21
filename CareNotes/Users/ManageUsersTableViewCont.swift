@@ -43,6 +43,9 @@ class ManageUsersTableViewCont: UITableViewController {
         let userCell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         userCell.textLabel?.text = DataMgr.instance().getUsers()[indexPath.row].getUserName() + " (" + DataMgr.instance().getUsers()[indexPath.row].getRole() + ")"
         userCell.textLabel?.textAlignment = .center
+        if (UIDevice.isPad) {
+            userCell.textLabel?.font = UIFont.init(name: "Helvetica", size: 25)
+        }
         return userCell
     }
     

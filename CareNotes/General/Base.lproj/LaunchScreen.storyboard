@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,34 +14,43 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainImage" translatesAutoresizingMaskIntoConstraints="NO" id="qZ4-Ir-rGx">
-                                <rect key="frame" x="40" y="139" width="313" height="197"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainImage" translatesAutoresizingMaskIntoConstraints="NO" id="Bt3-FJ-Gda">
+                                <rect key="frame" x="195" y="436" width="634" height="397"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="313" id="L5b-Fv-9uf"/>
-                                    <constraint firstAttribute="height" constant="197" id="gCz-qf-N7y"/>
-                                    <constraint firstAttribute="width" secondItem="qZ4-Ir-rGx" secondAttribute="height" multiplier="313:197" id="xHo-8P-ecl"/>
+                                    <constraint firstAttribute="height" constant="197" id="4MS-F8-l3I">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="397"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="Bt3-FJ-Gda" secondAttribute="height" multiplier="233:146" id="XyD-RK-mRR"/>
+                                    <constraint firstAttribute="width" constant="327" id="cJo-yq-n83">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="527"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launching CareNotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD1-7J-K3f">
-                                <rect key="frame" x="84.666666666666686" y="396" width="224" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RD1-7J-K3f" secondAttribute="height" multiplier="224:29" id="hNA-DA-c1a"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CaregiverNotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLg-rK-t6I">
+                                <rect key="frame" x="314.5" y="244" width="395" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                </variation>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RD1-7J-K3f" firstAttribute="top" secondItem="qZ4-Ir-rGx" secondAttribute="bottom" constant="60" id="763-yJ-MRz"/>
-                            <constraint firstItem="qZ4-Ir-rGx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7qt-08-x3f"/>
-                            <constraint firstItem="RD1-7J-K3f" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gjB-gm-ReE"/>
-                            <constraint firstItem="qZ4-Ir-rGx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="hFr-eK-wNL"/>
+                            <constraint firstItem="YLg-rK-t6I" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="77s-Z7-x99"/>
+                            <constraint firstItem="Bt3-FJ-Gda" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Gcl-pj-SmO"/>
+                            <constraint firstItem="YLg-rK-t6I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="RAP-hw-zb0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="220"/>
+                            </constraint>
+                            <constraint firstItem="Bt3-FJ-Gda" firstAttribute="width" secondItem="Bt3-FJ-Gda" secondAttribute="height" multiplier="233:146" id="RSw-fi-8Ly"/>
+                            <constraint firstItem="Bt3-FJ-Gda" firstAttribute="top" secondItem="YLg-rK-t6I" secondAttribute="bottom" constant="60" id="aap-Nr-mQN">
+                                <variation key="heightClass=regular-widthClass=regular" constant="120"/>
+                            </constraint>
                         </constraints>
                     </view>
                 </viewController>

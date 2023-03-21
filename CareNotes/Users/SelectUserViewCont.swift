@@ -9,21 +9,17 @@ import UIKit
 
 class SelectUserViewCont: UIViewController {
 
-    @IBOutlet weak var careNotes: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var selectMember: UILabel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        careNotes.text = "CareNotes"
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         
         self.navigationItem.setHidesBackButton(true, animated: true)
         
-        selectMember.font = UIFont.boldSystemFont(ofSize: 17.0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +63,10 @@ extension SelectUserViewCont: UITableViewDataSource {
                 userCell.textLabel?.text = user.getUserName() + " (" + user.getRole() + ")"
             }
         }
-
+        
+        if (UIDevice.isPad) {
+            userCell.textLabel?.font = UIFont.init(name: "Helvetica", size: 28)
+        }
         userCell.textLabel?.textAlignment = .center
         return userCell
     }
