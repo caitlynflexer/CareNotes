@@ -362,6 +362,55 @@
             </objects>
             <point key="canvasLocation" x="3875.5725190839694" y="636.61971830985919"/>
         </scene>
+        <!--Support View Controller-->
+        <scene sceneID="QcJ-cq-lLx">
+            <objects>
+                <viewController storyboardIdentifier="SupportViewControllerID" id="evc-zf-f7T" customClass="SupportViewController" customModule="CareNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B6Z-Ox-uA2">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Statement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXX-2i-Zlu">
+                                <rect key="frame" x="145.66666666666666" y="129" width="138.99999999999997" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0D-FP-Z1j">
+                                <rect key="frame" x="184" y="195" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ydu-cb-LMK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HXX-2i-Zlu" firstAttribute="centerX" secondItem="B6Z-Ox-uA2" secondAttribute="centerX" id="ae1-cY-bCX"/>
+                            <constraint firstItem="U0D-FP-Z1j" firstAttribute="top" secondItem="HXX-2i-Zlu" secondAttribute="bottom" constant="45" id="ciG-el-0bs">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="HXX-2i-Zlu" firstAttribute="top" secondItem="Ydu-cb-LMK" secondAttribute="top" constant="70" id="koT-X4-TqD">
+                                <variation key="heightClass=regular-widthClass=regular" constant="140"/>
+                            </constraint>
+                            <constraint firstItem="U0D-FP-Z1j" firstAttribute="centerX" secondItem="B6Z-Ox-uA2" secondAttribute="centerX" id="vWp-a6-REM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="privacyBtn" destination="HXX-2i-Zlu" id="g9Z-Ak-IZZ"/>
+                        <outlet property="supportBtn" destination="U0D-FP-Z1j" id="sul-Mn-E2F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEl-F0-B9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4589" y="636"/>
+        </scene>
         <!--New Entry View Cont-->
         <scene sceneID="RwQ-Zh-H1C">
             <objects>

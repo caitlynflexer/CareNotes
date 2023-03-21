@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E4FAEAD29A1E2E300BE3083 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FAEAC29A1E2E300BE3083 /* JournalTableViewController.swift */; };
 		2E4FAEAF29A1ED5000BE3083 /* NewVitalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FAEAE29A1ED5000BE3083 /* NewVitalsTableViewController.swift */; };
+		84054FD929C9533B00670755 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84054FD829C9533B00670755 /* SupportViewController.swift */; };
 		840D08A429A1AB30006233E1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A329A1AB30006233E1 /* Utils.swift */; };
 		840D08A629A2CCD5006233E1 /* AddNewVitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */; };
 		840D08A829A2D1E6006233E1 /* AddNewSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		2E4FAEAC29A1E2E300BE3083 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		2E4FAEAE29A1ED5000BE3083 /* NewVitalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVitalsTableViewController.swift; sourceTree = "<group>"; };
+		84054FD829C9533B00670755 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		840D08A329A1AB30006233E1 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVitalViewController.swift; sourceTree = "<group>"; };
 		840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSymptomViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				845D3D5F299DAEE100346DE4 /* Main.storyboard */,
 				845D3D62299DAEE300346DE4 /* Assets.xcassets */,
 				840D08A329A1AB30006233E1 /* Utils.swift */,
+				84054FD829C9533B00670755 /* SupportViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				843FAF27299EF980001A404A /* NewEntryViewCont.swift in Sources */,
 				845D3D5C299DAEE100346DE4 /* SceneDelegate.swift in Sources */,
 				840D08A629A2CCD5006233E1 /* AddNewVitalViewController.swift in Sources */,
+				84054FD929C9533B00670755 /* SupportViewController.swift in Sources */,
 				843FAF3B29A04439001A404A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

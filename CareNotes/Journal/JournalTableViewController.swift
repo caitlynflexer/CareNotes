@@ -29,8 +29,11 @@ class JournalTableViewController: UITableViewController {
             self.navigationController?.isToolbarHidden = false
             let spaceItemLeft = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(self.userBtnClicked(_:)))
+            let fixedSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
+            fixedSpace.width = 20.0
+            let settingsButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(self.supportBtnClicked(_:)))
             let spaceItemRight = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-            self.toolbarItems = [spaceItemLeft, barButtonItem, spaceItemRight]
+            self.toolbarItems = [spaceItemLeft, barButtonItem, fixedSpace, settingsButtonItem, spaceItemRight]
         } else {
             self.navigationController?.isToolbarHidden = true
         }
@@ -59,6 +62,11 @@ class JournalTableViewController: UITableViewController {
     
     @objc func userBtnClicked(_ sender: UIBarButtonItem) {
         let newViewCont = self.storyboard?.instantiateViewController(withIdentifier: "ManageUsersTableViewContID") as! ManageUsersTableViewCont
+        self.navigationController?.pushViewController(newViewCont, animated: true)
+    }
+    
+    @objc func supportBtnClicked(_ sender: UIBarButtonItem) {
+        let newViewCont = self.storyboard?.instantiateViewController(withIdentifier: "SupportViewControllerID") as! SupportViewController
         self.navigationController?.pushViewController(newViewCont, animated: true)
     }
     
