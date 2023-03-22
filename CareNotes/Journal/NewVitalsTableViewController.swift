@@ -57,18 +57,18 @@ class NewVitalsTableViewController: UITableViewController {
             }
             
             let date = Date.now
-            if (selectedSymptoms.count > 0 || vitalValues.count > 0) {
-                
+            
+            if (vitalValues.count > 0) {
                 for (vitalName, value) in vitalValues {
                     if (value == "") {
                         vitalValues.removeValue(forKey: vitalName)
                     }
                 }
-                
-                if (vitalValues.count > 0) {
-                    let journalEntry = JournalEntry(_text: "", _user: DataMgr.instance().getCurrentUser()!.getUserName(), _dateAndTime: date, _vitals: vitalValues, _symptoms: selectedSymptoms)
+            }
+            
+            if (selectedSymptoms.count > 0 || vitalValues.count > 0) {
+                let journalEntry = JournalEntry(_text: "", _user: DataMgr.instance().getCurrentUser()!.getUserName(), _dateAndTime: date, _vitals: vitalValues, _symptoms: selectedSymptoms)
                     DataMgr.instance().addJournalEntry(entry: journalEntry)
-                }
             }
         }
         goBack()

@@ -30,10 +30,10 @@ class JournalTableViewController: UITableViewController {
         if (DataMgr.instance().getCurrentUser()!.getRole() == "Admin") {
             self.navigationController?.isToolbarHidden = false
             let spaceItemLeft = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-            let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill")?.scale(amt: 1.5), style: .plain, target: self, action: #selector(self.userBtnClicked(_:)))
+            let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill")?.scaleIPad(amt: 2), style: .plain, target: self, action: #selector(self.userBtnClicked(_:)))
             let fixedSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
             fixedSpace.width = 20.0
-            let settingsButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear")?.scale(amt: 1.5), style: .plain, target: self, action: #selector(self.supportBtnClicked(_:)))
+            let settingsButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear")?.scaleIPad(amt: 2), style: .plain, target: self, action: #selector(self.supportBtnClicked(_:)))
             let spaceItemRight = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             self.toolbarItems = [spaceItemLeft, barButtonItem, fixedSpace, settingsButtonItem, spaceItemRight]
         } else {
@@ -93,25 +93,23 @@ class JournalTableViewController: UITableViewController {
         
         if (DataMgr.instance().getNumJournalEntries() == 0) {
             cell.userLabel?.text = ""
-            cell.journalEntry?.textColor = UIColor.gray
+            cell.journalEntry?.textColor = UIColor.darkGray
             cell.journalEntry?.textAlignment = .center
             cell.journalEntry?.text = "Journal is empty"
-            cell.time?.text = ""
             tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         } else {
             let journalEntry = DataMgr.instance().getJournalEntry(section: indexPath.section, row: indexPath.row)
-            cell.userLabel?.text = journalEntry.getUser()
+            cell.userLabel?.text = journalEntry.getTimeStr() + "  " + journalEntry.getUser()
+            cell.userLabel?.textColor = UIColor.darkGray
             cell.journalEntry?.textAlignment = .left
             cell.journalEntry?.textColor = UIColor.black
             cell.journalEntry?.text = journalEntry.getDisplayText()
-            cell.time?.text = journalEntry.getTimeStr()
             tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         }
         
         if (UIDevice.isPad) {
             cell.userLabel?.font = UIFont.init(name: "Helvetica", size: 20)
             cell.journalEntry?.font = UIFont.init(name: "Helvetica", size: 22)
-            cell.time?.font = UIFont.init(name: "Helvetica", size: 20)
         }
         cell.selectionStyle = .none
         return cell

@@ -30,17 +30,16 @@ class SupportViewController: UIViewController {
     }
 
     @IBAction func privacyBtnClicked(_ sender: Any) {
-        if let url = URL(string: "https://www.caregivernotes.org/PrivacyPolicy.html") {
+        if let url = URL(string: "https://caregivernotes.org/Privacy%20Policy.html") {
             UIApplication.shared.open(url)
         }
     }
     
     @IBAction func supportBtnClicked(_ sender: Any) {
-        if let url = URL(string: "https://www.caregivernotes.org/PrivacyPolicy.html") {
+        if let url = URL(string: "https://caregivernotes.org/Home.html") {
             UIApplication.shared.open(url)
         }
     }
-    
     
     @IBAction func back(_ sender: UIBarButtonItem) {
         goBack()

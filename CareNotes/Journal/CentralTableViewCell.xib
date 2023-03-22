@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,40 +18,40 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfE-Mb-dHw">
-                        <rect key="frame" x="10" y="5" width="300" height="82.666666666666671"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <rect key="frame" x="15" y="7" width="65.333333333333329" height="82.666666666666671"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Journal entry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crj-R2-EJF">
-                        <rect key="frame" x="10" y="103.66666666666667" width="300" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:01 pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUE-B4-7qu">
-                        <rect key="frame" x="245" y="5" width="55" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="15" y="99.666666666666671" width="295" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="crj-R2-EJF" secondAttribute="trailing" constant="10" id="6Mj-GG-4MQ"/>
-                    <constraint firstAttribute="bottom" secondItem="crj-R2-EJF" secondAttribute="bottom" constant="5" id="6z8-ph-oaH"/>
-                    <constraint firstItem="crj-R2-EJF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="9IX-wq-5lR"/>
-                    <constraint firstAttribute="trailing" secondItem="xfE-Mb-dHw" secondAttribute="trailing" constant="10" id="Jg2-QC-cEm"/>
-                    <constraint firstItem="xfE-Mb-dHw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="MMT-Sy-ewM"/>
-                    <constraint firstItem="FUE-B4-7qu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="VQe-xo-xEe"/>
-                    <constraint firstItem="crj-R2-EJF" firstAttribute="top" secondItem="xfE-Mb-dHw" secondAttribute="bottom" constant="16" id="osy-W7-LBS"/>
-                    <constraint firstItem="xfE-Mb-dHw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="vuC-ex-MEW"/>
-                    <constraint firstAttribute="trailing" secondItem="FUE-B4-7qu" secondAttribute="trailing" constant="20" id="yHO-Kd-HxA"/>
+                    <constraint firstAttribute="trailing" secondItem="crj-R2-EJF" secondAttribute="trailing" constant="10" id="JCz-VS-YJs"/>
+                    <constraint firstItem="crj-R2-EJF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="PiR-e7-M80">
+                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                    </constraint>
+                    <constraint firstItem="xfE-Mb-dHw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ZZZ-HD-Em4">
+                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                    </constraint>
+                    <constraint firstItem="xfE-Mb-dHw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="kbH-OX-5Vl">
+                        <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                    </constraint>
+                    <constraint firstItem="crj-R2-EJF" firstAttribute="top" secondItem="xfE-Mb-dHw" secondAttribute="bottom" constant="10" id="qYh-UZ-oN5">
+                        <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                    </constraint>
+                    <constraint firstAttribute="bottom" secondItem="crj-R2-EJF" secondAttribute="bottom" constant="10" id="xbX-nN-7ZM">
+                        <variation key="heightClass=regular-widthClass=regular" constant="15"/>
+                    </constraint>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="journalEntry" destination="crj-R2-EJF" id="1Ui-jj-JE9"/>
-                <outlet property="time" destination="FUE-B4-7qu" id="XUN-Yx-5DS"/>
                 <outlet property="userLabel" destination="xfE-Mb-dHw" id="4vi-s6-O0l"/>
             </connections>
             <point key="canvasLocation" x="-73" y="-52"/>
