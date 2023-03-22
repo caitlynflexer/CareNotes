@@ -26,6 +26,7 @@ class SupportViewController: UIViewController {
         let guestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(supportBtnClicked(_:)))
         supportBtn.addGestureRecognizer(guestureRecognizer2)
         
+        self.navigationItem.scaleText();
     }
 
     @IBAction func privacyBtnClicked(_ sender: Any) {

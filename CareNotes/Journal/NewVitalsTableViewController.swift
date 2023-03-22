@@ -27,6 +27,7 @@ class NewVitalsTableViewController: UITableViewController {
         tableView.allowsMultipleSelectionDuringEditing = true
         tableView.register(JournalHeaderView.self, forHeaderFooterViewReuseIdentifier: JournalHeaderView.identifier)
         
+        self.navigationItem.scaleText();
     }
 
     @IBAction func back(_ sender: UIBarButtonItem) {
@@ -79,7 +80,7 @@ class NewVitalsTableViewController: UITableViewController {
         var value : String = textField.text?.trim() ?? ""
         if (value != "") {
             value += " " + DataMgr.instance().getVitalUnit(vital: vital)
-        }        
+        }
         self.vitalValues[vital] = value
     }
     

@@ -15,6 +15,8 @@ class ManageUsersTableViewCont: UITableViewController {
         // top bar
         self.navigationItem.title = "Manage Users"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action:#selector(ManageUsersTableViewCont.back(_:)))
+        
+        self.navigationItem.scaleText();
 
     }
     

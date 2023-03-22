@@ -15,30 +15,32 @@ class JournalTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // top bar
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Log out", style: .plain, target: self, action: #selector(self.logOut(_:)))
+        let logOut = UIBarButtonItem.init(title: "Log out", style: .plain, target: self, action: #selector(self.logOut(_:)))
+        self.navigationItem.leftBarButtonItem = logOut
         
-        let newEntry = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(self.newEntryBtnClicked(_:)))
+        let newEntry = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil")?.scaleIPad(amt: 1.5), style: .plain, target: self, action: #selector(self.newEntryBtnClicked(_:)))
         
-        let newVitals = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(self.newVitalsBtnClicked(_:)))
+        let newVitals = UIBarButtonItem(image: UIImage(systemName: "plus")?.scaleIPad(amt: 1.5), style: .plain, target: self, action: #selector(self.newVitalsBtnClicked(_:)))
 
         self.navigationItem.rightBarButtonItems = [newEntry, newVitals]
         
+        self.navigationItem.scaleText();
         
         // bottom bar
         if (DataMgr.instance().getCurrentUser()!.getRole() == "Admin") {
             self.navigationController?.isToolbarHidden = false
             let spaceItemLeft = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-            let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(self.userBtnClicked(_:)))
+            let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill")?.scale(amt: 1.5), style: .plain, target: self, action: #selector(self.userBtnClicked(_:)))
             let fixedSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
             fixedSpace.width = 20.0
-            let settingsButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(self.supportBtnClicked(_:)))
+            let settingsButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear")?.scale(amt: 1.5), style: .plain, target: self, action: #selector(self.supportBtnClicked(_:)))
             let spaceItemRight = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             self.toolbarItems = [spaceItemLeft, barButtonItem, fixedSpace, settingsButtonItem, spaceItemRight]
         } else {
             self.navigationController?.isToolbarHidden = true
         }
         
-        // table view 
+        // table view
         tableView.register(UINib(nibName: String(describing: CentralTableViewCell.self), bundle: nil), forCellReuseIdentifier: centralCellReuseIdentifier)
         tableView.rowHeight  = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
@@ -93,8 +95,9 @@ class JournalTableViewController: UITableViewController {
             cell.userLabel?.text = ""
             cell.journalEntry?.textColor = UIColor.gray
             cell.journalEntry?.textAlignment = .center
-            cell.journalEntry?.text = "Tap icons above to create entries"
+            cell.journalEntry?.text = "Journal is empty"
             cell.time?.text = ""
+            tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         } else {
             let journalEntry = DataMgr.instance().getJournalEntry(section: indexPath.section, row: indexPath.row)
             cell.userLabel?.text = journalEntry.getUser()
@@ -102,6 +105,7 @@ class JournalTableViewController: UITableViewController {
             cell.journalEntry?.textColor = UIColor.black
             cell.journalEntry?.text = journalEntry.getDisplayText()
             cell.time?.text = journalEntry.getTimeStr()
+            tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         }
         
         if (UIDevice.isPad) {

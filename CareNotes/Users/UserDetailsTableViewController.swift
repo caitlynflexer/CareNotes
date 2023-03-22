@@ -25,6 +25,8 @@ class UserDetailsTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action:#selector(UserDetailsTableViewController.back(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action:#selector(UserDetailsTableViewController.editBtnClicked(_:)))
         self.navigationItem.leftBarButtonItem?.isEnabled = true
+        
+        self.navigationItem.scaleText();
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {

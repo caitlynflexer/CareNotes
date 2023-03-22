@@ -73,3 +73,44 @@ extension JSONSerialization {
 }
 
 
+extension UIImage {
+    func resize(targetSize: CGSize) -> UIImage {
+        // from https://stackoverflow.com/questions/31966885/resize-uiimage-to-200x200pt-px
+        return UIGraphicsImageRenderer(size:targetSize).image { _ in
+            self.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+    }
+    
+    func scale(amt: CGFloat) -> UIImage {
+        return resize(targetSize: CGSize(width: amt * self.size.width, height: amt * self.size.height));
+    }
+    
+    func scaleIPad(amt: CGFloat) -> UIImage {
+        return UIDevice.isPad ? self.scale(amt: amt) : self;
+    }
+}
+
+extension UINavigationItem {
+    func scaleText() -> Void {
+        if (UIDevice.isPad) {
+            // title
+            var font = UIFont.systemFont(ofSize: 27)
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,
+                                              NSAttributedString.Key.font: font]
+            self.standardAppearance = appearance
+            
+            // left button
+            font = UIFont.systemFont(ofSize: 24)
+            self.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemBlue,
+                 NSAttributedString.Key.font: font], for: [])
+            
+            // right button, include disabled state
+            self.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemBlue,
+                 NSAttributedString.Key.font: font], for: UIControl.State.normal)
+            self.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemGray,
+                 NSAttributedString.Key.font: font], for: UIControl.State.disabled)
+        }
+    }
+}

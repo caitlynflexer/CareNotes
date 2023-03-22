@@ -14,12 +14,14 @@ class CreateNewUserViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "Create New User"
+        self.navigationItem.title = "Add New User"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action:#selector(NewVitalsTableViewController.back(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action:#selector(NewVitalsTableViewController.saveBtnClicked(_:)))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         userNameTextField.addTarget(self, action: #selector(CreateNewUserViewController.textFieldDidChange(_:)), for: .editingChanged)
+        
+        self.navigationItem.scaleText();
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -20,6 +20,8 @@ class AddNewSymptomViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         symptomTextField.addTarget(self, action: #selector(AddNewSymptomViewController.textFieldDidChange(_:)), for: .editingChanged)
+        
+        self.navigationItem.scaleText();
     }
     
     override func viewDidAppear(_ animated: Bool) {

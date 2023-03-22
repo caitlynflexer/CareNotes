@@ -22,6 +22,8 @@ class AddNewVitalViewController: UIViewController, UITextFieldDelegate {
         
         vitalTextField.addTarget(self, action: #selector(AddNewVitalViewController.textFieldDidChange(_:)), for: .editingChanged)
         unitsTextField.addTarget(self, action: #selector(AddNewVitalViewController.textFieldDidChange(_:)), for: .editingChanged)
+        
+        self.navigationItem.scaleText();
     }
     
     override func viewDidAppear(_ animated: Bool) {

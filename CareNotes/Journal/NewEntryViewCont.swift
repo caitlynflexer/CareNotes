@@ -32,6 +32,8 @@ class NewEntryViewCont: UIViewController {
         self.navigationItem.leftBarButtonItem = backButtonItem
         
         self.navigationItem.title = "New Journal Entry"
+        
+        self.navigationItem.scaleText();
     }
     
     override func viewDidAppear(_ animated: Bool) {
