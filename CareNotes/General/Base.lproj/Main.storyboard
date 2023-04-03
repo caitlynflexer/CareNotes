@@ -388,10 +388,23 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9v-wM-jN2">
+                                <rect key="frame" x="170" y="261" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ydu-cb-LMK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="q9v-wM-jN2" firstAttribute="top" secondItem="U0D-FP-Z1j" secondAttribute="bottom" constant="45" id="92T-OE-BAV">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="q9v-wM-jN2" firstAttribute="centerX" secondItem="B6Z-Ox-uA2" secondAttribute="centerX" id="Ko3-Bd-C1J"/>
                             <constraint firstItem="HXX-2i-Zlu" firstAttribute="centerX" secondItem="B6Z-Ox-uA2" secondAttribute="centerX" id="ae1-cY-bCX"/>
                             <constraint firstItem="U0D-FP-Z1j" firstAttribute="top" secondItem="HXX-2i-Zlu" secondAttribute="bottom" constant="45" id="ciG-el-0bs">
                                 <variation key="heightClass=regular-widthClass=regular" constant="50"/>
@@ -403,6 +416,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="exportBtn" destination="q9v-wM-jN2" id="pRy-FQ-5RM"/>
                         <outlet property="privacyBtn" destination="HXX-2i-Zlu" id="g9Z-Ak-IZZ"/>
                         <outlet property="supportBtn" destination="U0D-FP-Z1j" id="sul-Mn-E2F"/>
                     </connections>
