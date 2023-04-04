@@ -23,6 +23,8 @@ public class DataMgr {
     private var inspectUserId: Int = 0
     private var inspectUserIndex: Int = 0
     
+    private var inspectVitalIndex: Int = 0
+    
     private static let dataMgr = DataMgr()
     
     init() {
@@ -113,6 +115,14 @@ public class DataMgr {
     
     func setCurrentUserId(userId: Int) {
         currentUserId = userId
+    }
+    
+    func setInspectVitalIndex(num : Int) {
+        inspectVitalIndex = num
+    }
+    
+    func getInspectVitalIndex() -> Int {
+        return inspectVitalIndex
     }
     
     func setInspectUserId(userID: Int) {

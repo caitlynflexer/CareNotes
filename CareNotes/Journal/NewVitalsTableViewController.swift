@@ -114,6 +114,9 @@ class NewVitalsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var viewCell : UITableViewCell
+        
         if (indexPath.section == 0) {
             let vitalCell = tableView.dequeueReusableCell(withIdentifier: "vitalCell", for: indexPath)
             
@@ -124,7 +127,9 @@ class NewVitalsTableViewController: UITableViewController {
             }
             vitalCell.selectionStyle = .none
             
-            if (editMode == false) {
+            if (editMode) {
+                vitalCell.contentView.subviews[0].isHidden = true
+            } else {
                 vitalCell.contentView.subviews[0].isHidden = false
                 let textField:UITextField = vitalCell.contentView.subviews[0] as! UITextField
                 
@@ -144,13 +149,13 @@ class NewVitalsTableViewController: UITableViewController {
                 
                 textField.addTarget(self, action: #selector(NewVitalsTableViewController.textFieldDidChange(_:)), for: .editingChanged)
                 textField.keyboardType = UIKeyboardType.numbersAndPunctuation
-            } else {
-                vitalCell.contentView.subviews[0].isHidden = true
             }
+            
             if (UIDevice.isPad) {
                 vitalCell.textLabel?.font = UIFont.init(name: "Helvetica", size: 22)
             }
-            return vitalCell
+            
+            viewCell = vitalCell
             
         } else {
             let symptomCell = tableView.dequeueReusableCell(withIdentifier: "symptomCell", for: indexPath)
@@ -158,8 +163,24 @@ class NewVitalsTableViewController: UITableViewController {
             if (UIDevice.isPad) {
                 symptomCell.textLabel?.font = UIFont.init(name: "Helvetica", size: 22)
             }
-            return symptomCell
+            viewCell = symptomCell
         }
+        
+        for recognizer in viewCell.textLabel?.gestureRecognizers ?? [] {
+            viewCell.textLabel?.removeGestureRecognizer(recognizer)
+        }
+        
+        if (editMode) {
+            let tap = UITapGestureRecognizer(target: self, action: indexPath.section == 0 ? #selector(NewVitalsTableViewController.vitalTapped) : #selector(NewVitalsTableViewController.symptomTapped))
+            viewCell.textLabel?.tag = indexPath.row
+            viewCell.textLabel?.isUserInteractionEnabled = true
+            viewCell.textLabel?.addGestureRecognizer(tap)
+        }
+        else {
+            viewCell.textLabel?.isUserInteractionEnabled = false
+        }
+        
+        return viewCell
     }
 
     
@@ -280,6 +301,24 @@ class NewVitalsTableViewController: UITableViewController {
                 DataMgr.instance().removeSymptom(index: sourceIndexPath.row)
                 DataMgr.instance().insertSymptom(symptom: movedObject, index: destinationIndexPath.row)
             }
+        }
+    }
+    
+    @objc func vitalTapped(sender:UITapGestureRecognizer) {
+        if let view = sender.view {
+            let row = view.tag
+            DataMgr.instance().setInspectVitalIndex(num: row)
+            print("vital tapped" + String(row))
+        }
+        
+        let newViewCont = self.storyboard?.instantiateViewController(withIdentifier: "VitalDetailsTableViewControllerID") as! VitalDetailsTableViewController
+        self.navigationController?.pushViewController(newViewCont, animated: true)
+    }
+        
+    @objc func symptomTapped(sender:UITapGestureRecognizer) {
+        if let view = sender.view {
+            let row = view.tag
+            print("symptom tapped" + String(row))
         }
     }
 }

@@ -722,6 +722,51 @@
             </objects>
             <point key="canvasLocation" x="4551.9083969465646" y="-27.464788732394368"/>
         </scene>
+        <!--Vital Details Table View Controller-->
+        <scene sceneID="4Gz-TO-9W6">
+            <objects>
+                <tableViewController storyboardIdentifier="VitalDetailsTableViewControllerID" id="cgE-pL-DgP" customClass="VitalDetailsTableViewController" customModule="CareNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="IDi-WZ-iuK">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bNu-vn-eJe">
+                                <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bNu-vn-eJe" id="QeM-jP-fJX">
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1F-FG-nHg">
+                                            <rect key="frame" x="88" y="5" width="278" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="pH8-G8-sWJ"/>
+                                                <constraint firstAttribute="width" constant="278" id="yfm-sK-PIw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="F1F-FG-nHg" firstAttribute="top" secondItem="QeM-jP-fJX" secondAttribute="top" constant="5" id="15t-nb-BK2"/>
+                                        <constraint firstItem="F1F-FG-nHg" firstAttribute="leading" secondItem="QeM-jP-fJX" secondAttribute="leading" constant="88" id="ZrA-N4-jue">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="110"/>
+                                        </constraint>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cgE-pL-DgP" id="x8E-eE-Sbi"/>
+                            <outlet property="delegate" destination="cgE-pL-DgP" id="8ds-aD-Wxx"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fD4-Z9-2In" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5275.8139534883721" y="-28.326180257510732"/>
+        </scene>
     </scenes>
     <resources>
         <image name="mainImage" width="538" height="524"/>

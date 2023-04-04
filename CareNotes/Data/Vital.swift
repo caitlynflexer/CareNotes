@@ -28,12 +28,18 @@ public class Vital {
         return self.vitalName
     }
     
+    public func setVitalName(name : String) {
+        vitalName = name
+        DataMgr.instance().dataChanged()
+    }
+    
     public func getUnits() -> String {
         return self.units
     }
     
     public func setUnits(newUnits : String) {
         units = newUnits
+        DataMgr.instance().dataChanged()
     }
     
     public func export() -> [String : Any] {

@@ -14,6 +14,7 @@
 		840D08A629A2CCD5006233E1 /* AddNewVitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */; };
 		840D08A829A2D1E6006233E1 /* AddNewSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */; };
 		840D08AA29A2E12C006233E1 /* CreateNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D08A929A2E12C006233E1 /* CreateNewUserViewController.swift */; };
+		841E137A29DBA3000020C7F2 /* VitalDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E137929DBA3000020C7F2 /* VitalDetailsTableViewController.swift */; };
 		843FAF27299EF980001A404A /* NewEntryViewCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF26299EF980001A404A /* NewEntryViewCont.swift */; };
 		843FAF2F299F35EB001A404A /* DataMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF2E299F35EB001A404A /* DataMgr.swift */; };
 		843FAF3329A024FB001A404A /* JournalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843FAF3229A024FB001A404A /* JournalHeaderView.swift */; };
@@ -41,6 +42,7 @@
 		840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVitalViewController.swift; sourceTree = "<group>"; };
 		840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSymptomViewController.swift; sourceTree = "<group>"; };
 		840D08A929A2E12C006233E1 /* CreateNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUserViewController.swift; sourceTree = "<group>"; };
+		841E137929DBA3000020C7F2 /* VitalDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalDetailsTableViewController.swift; sourceTree = "<group>"; };
 		843FAF26299EF980001A404A /* NewEntryViewCont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewCont.swift; sourceTree = "<group>"; };
 		843FAF2E299F35EB001A404A /* DataMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMgr.swift; sourceTree = "<group>"; };
 		843FAF3229A024FB001A404A /* JournalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalHeaderView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				2E4FAEAE29A1ED5000BE3083 /* NewVitalsTableViewController.swift */,
 				840D08A529A2CCD5006233E1 /* AddNewVitalViewController.swift */,
 				840D08A729A2D1E6006233E1 /* AddNewSymptomViewController.swift */,
+				841E137929DBA3000020C7F2 /* VitalDetailsTableViewController.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				843FAF2F299F35EB001A404A /* DataMgr.swift in Sources */,
 				2E4FAEAF29A1ED5000BE3083 /* NewVitalsTableViewController.swift in Sources */,
 				843FAF3529A02B62001A404A /* JournalEntry.swift in Sources */,
+				841E137A29DBA3000020C7F2 /* VitalDetailsTableViewController.swift in Sources */,
 				2E4FAEAD29A1E2E300BE3083 /* JournalTableViewController.swift in Sources */,
 				845D3D5E299DAEE100346DE4 /* SetupViewCont.swift in Sources */,
 				845D3D7D299DE7E600346DE4 /* CentralTableViewCell.swift in Sources */,

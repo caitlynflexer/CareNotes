@@ -60,13 +60,12 @@ class SupportViewController: UIViewController, UINavigationControllerDelegate, M
                 composeVC.addAttachmentData(allData! as Data, mimeType: "application/json" , fileName: "careNotesData.json")
                 self.present(composeVC, animated: true, completion: nil)
             } catch {
-                showDialog2()
+                showErrorDlg(message: "Unable to send data")
             }
             
         } else {
-            showDialog()
+            showErrorDlg(message: "Email is not yet set up on device")
         }
-        
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -82,14 +81,8 @@ class SupportViewController: UIViewController, UINavigationControllerDelegate, M
         navigationController?.popViewController(animated: true)
     }
     
-    func showDialog() {
-        let alert = UIAlertController(title: nil, message: "Email is not yet set up on device", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func showDialog2() {
-        let alert = UIAlertController(title: nil, message: "Unable to send data", preferredStyle: .alert)
+    func showErrorDlg(message : String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
