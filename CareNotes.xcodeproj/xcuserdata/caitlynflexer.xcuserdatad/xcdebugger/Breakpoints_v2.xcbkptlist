@@ -398,8 +398,8 @@
             filePath = "CareNotes/Journal/NewVitalsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "vitalTapped(sender:)"
             landmarkType = "7">
             <Locations>
@@ -446,9 +446,216 @@
             filePath = "CareNotes/Journal/VitalDetailsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "editBtnClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "875FACBF-87A3-4CC7-A375-CEA697723F16"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Journal/AddNewVitalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "save()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "875FACBF-87A3-4CC7-A375-CEA697723F16 - 787c90525898c6cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.AddNewVitalViewController.save() -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/AddNewVitalViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "2124">
+               </Location>
+               <Location
+                  uuid = "875FACBF-87A3-4CC7-A375-CEA697723F16 - 787c90525898c6cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.AddNewVitalViewController.save() -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/AddNewVitalViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "3184">
+               </Location>
+               <Location
+                  uuid = "875FACBF-87A3-4CC7-A375-CEA697723F16 - 787c90525898c6cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.AddNewVitalViewController.save() -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/AddNewVitalViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "6185">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54B080D1-4826-4518-8DCF-DF2BAEDE4FBC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Journal/VitalDetailsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "textFieldDidChange(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "54B080D1-4826-4518-8DCF-DF2BAEDE4FBC - 354a946a85baa43e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.VitalDetailsTableViewController.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/VitalDetailsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "489">
+               </Location>
+               <Location
+                  uuid = "54B080D1-4826-4518-8DCF-DF2BAEDE4FBC - 354a946a85baa43e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.VitalDetailsTableViewController.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/VitalDetailsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "550">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70192AF2-4452-4E4F-A618-85DD3CE10630"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Journal/VitalDetailsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "textFieldDidChange(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70192AF2-4452-4E4F-A618-85DD3CE10630 - 354a946a85baa401"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.VitalDetailsTableViewController.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/VitalDetailsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  uuid = "70192AF2-4452-4E4F-A618-85DD3CE10630 - 354a946a85baa401"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CareNotes.VitalDetailsTableViewController.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "CareNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caitlynflexer/CareNotes/CareNotes/Journal/VitalDetailsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "187">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CA758C6-11F1-496A-B1A6-55876A54546B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Data/Vital.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "init(vitalInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0506D63B-E21E-44CE-AE49-990476BB8298"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Journal/VitalDetailsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D269B9E0-75B8-46C8-A5B1-D5243D2DA23D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CareNotes/Journal/NewVitalsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "save()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

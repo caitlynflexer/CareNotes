@@ -45,6 +45,7 @@ class NewVitalsTableViewController: UITableViewController {
     func save() {
         let selectedRows = tableView.indexPathsForSelectedRows
         let haveSelectedRows = (selectedRows != nil) && selectedRows!.count >= 1
+        var validValues = true
         
         if (haveSelectedRows || vitalValues.count > 0) {
             if (haveSelectedRows) {
@@ -66,7 +67,24 @@ class NewVitalsTableViewController: UITableViewController {
                 }
             }
             
-            if (selectedSymptoms.count > 0 || vitalValues.count > 0) {
+            if (vitalValues.count > 0) {
+                for (vitalName, value) in vitalValues {
+                    let indx = DataMgr.instance().getVitalIndex(vital: vitalName)
+                    let curVital = DataMgr.instance().getVitals()[indx]
+                    let units = curVital.getUnits()
+                    let endIndex = value.count - units.count - 1
+                    let vitalValue = String(value.prefix(endIndex))
+                    
+                    if (curVital.getMax() != 0 || curVital.getMin() != 0) {
+                        if (!vitalValue.isNumber || (Int(vitalValue)! < curVital.getMin() || Int(vitalValue)! > curVital.getMax())) {
+                            showDialog(message: "Please enter an integer for " + vitalName + " between " + String(curVital.getMin()) + " and " + String(curVital.getMax()) + ".")
+                            validValues = false
+                        }
+                    }
+                }
+            }
+            
+            if (validValues && (selectedSymptoms.count > 0 || vitalValues.count > 0)) {
                 let journalEntry = JournalEntry(_text: "", _user: DataMgr.instance().getCurrentUser()!.getUserName(), _dateAndTime: date, _vitals: vitalValues, _symptoms: selectedSymptoms)
                     DataMgr.instance().addJournalEntry(entry: journalEntry)
             }
@@ -320,5 +338,11 @@ class NewVitalsTableViewController: UITableViewController {
             let row = view.tag
             print("symptom tapped" + String(row))
         }
+    }
+    
+    func showDialog(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

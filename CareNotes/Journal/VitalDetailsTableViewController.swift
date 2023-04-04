@@ -16,12 +16,16 @@ class VitalDetailsTableViewController: UITableViewController {
     let vitalIndex = DataMgr.instance().getInspectVitalIndex()
     var vitalName = ""
     var vitalUnits = ""
+    var vitalMax = 0
+    var vitalMin = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         vitalName = DataMgr.instance().getVitals()[vitalIndex].getVitalName()
         vitalUnits = DataMgr.instance().getVitalUnit(vital: vitalName)
+        vitalMax = DataMgr.instance().getVitals()[vitalIndex].getMax()
+        vitalMin = DataMgr.instance().getVitals()[vitalIndex].getMin()
         
         self.navigationItem.title = "Vital Details"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action:#selector(UserDetailsTableViewController.back(_:)))
@@ -46,7 +50,7 @@ class VitalDetailsTableViewController: UITableViewController {
             let vitals = DataMgr.instance().getVitals()
             for i in 0...vitals.count - 1 {
                 if (i != vitalIndex && vitals[i].getVitalName() == DataMgr.instance().getVitals()[vitalIndex].getVitalName()) {
-                    showDialog()
+                    showDialog(message: "Vital already exists. Please choose a different vital name.")
                     vitalExists = true
                 }
             }
@@ -67,7 +71,7 @@ class VitalDetailsTableViewController: UITableViewController {
     
     @objc public func textFieldDidChange(_ textField: UITextField) {
         let property : String = textField.accessibilityIdentifier!
-        let value : String = textField.text?.trim() ?? ""
+        var value : String = textField.text?.trim() ?? ""
 
         if (property == "Units") {
             DataMgr.instance().getVitals()[vitalIndex].setUnits(newUnits: value)
@@ -78,6 +82,36 @@ class VitalDetailsTableViewController: UITableViewController {
             DataMgr.instance().getVitals()[vitalIndex].setVitalName(name : value)
             vitalName = value
         }
+        
+        if (property == "Min") {
+            if (value.isNumber) {
+                DataMgr.instance().getVitals()[vitalIndex].setMin(newMin : Int(value)!)
+                vitalMin = Int(value)!
+            } else if (value == "") {
+                DataMgr.instance().getVitals()[vitalIndex].setMin(newMin : 0)
+                vitalMin = 0
+            } else {
+                showDialog(message: "Please enter an integer for min value")
+            }
+        }
+        
+        if (property == "Max") {
+            if (value.isNumber) {
+                DataMgr.instance().getVitals()[vitalIndex].setMax(newMax : Int(value)!)
+                vitalMax = Int(value)!
+            } else if (value == "") {
+                DataMgr.instance().getVitals()[vitalIndex].setMax(newMax : 0)
+                vitalMax = 0
+            } else {
+                showDialog(message: "Please enter an integer for max value")
+            }
+        }
+        
+        if (vitalMax < vitalMin) {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,7 +120,7 @@ class VitalDetailsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
 
     
@@ -97,8 +131,12 @@ class VitalDetailsTableViewController: UITableViewController {
             cell.textLabel?.textColor = .black
             cell.textLabel?.textAlignment = .left
             cell.textLabel?.text = editMode ? "Vital:" : "Vital: " + vitalName
-        } else {
+        } else if (indexPath.row == 1) {
             cell.textLabel?.text = editMode ? "Units:" : "Units: " + vitalUnits
+        } else if (indexPath.row == 2) {
+            cell.textLabel?.text = editMode ? "Min:" : "Min: " + String(vitalMin)
+        } else {
+            cell.textLabel?.text = editMode ? "Max:" : "Max: " + String(vitalMax)
         }
         
         if (UIDevice.isPad) {
@@ -108,8 +146,19 @@ class VitalDetailsTableViewController: UITableViewController {
         if (editMode) {
             cell.contentView.subviews[0].isHidden = false
             let textField:UITextField = cell.contentView.subviews[0] as! UITextField
-            textField.accessibilityIdentifier = (indexPath.row == 0) ? "Name" : "Units"
-            textField.text = (indexPath.row == 0) ? vitalName : vitalUnits
+            if (indexPath.row == 0) {
+                textField.accessibilityIdentifier = "Name"
+                textField.text = vitalName
+            } else if (indexPath.row == 1) {
+                textField.accessibilityIdentifier = "Units"
+                textField.text = vitalUnits
+            } else if (indexPath.row == 2) {
+                textField.accessibilityIdentifier = "Min"
+                textField.text = String(vitalMin)
+            } else {
+                textField.accessibilityIdentifier = "Max"
+                textField.text = String(vitalMax)
+            }
             textField.addTarget(self, action: #selector(VitalDetailsTableViewController.textFieldDidChange(_:)), for: .editingChanged)
             textField.keyboardType = (indexPath.row == 0) ? UIKeyboardType.default : UIKeyboardType.numbersAndPunctuation
         } else {
@@ -123,8 +172,8 @@ class VitalDetailsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func showDialog() {
-        let alert = UIAlertController(title: nil, message: "Vital already exists. Please choose a different vital name.", preferredStyle: .alert)
+    func showDialog(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }

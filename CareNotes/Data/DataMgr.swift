@@ -14,7 +14,7 @@ public class DataMgr {
     
     private var symptoms = ["Fatigue", "Leg pain", "Headache", "Fever", "Muscle cramps"]
     
-    private var vitals = [Vital(_vitalName : "Weight", _units : "lbs"), Vital(_vitalName : "O2 level", _units : "%"), Vital(_vitalName : "Temperature", _units : "˚F"), Vital(_vitalName : "Blood Pressure", _units : "mmHg")]
+    private var vitals = [Vital(_vitalName : "Weight", _units : "lbs", _min : 0, _max : 500), Vital(_vitalName : "O2 level", _units : "%", _min : 80, _max : 100), Vital(_vitalName : "Temperature", _units : "˚F", _min : 90, _max : 110), Vital(_vitalName : "Blood Pressure", _units : "mmHg", _min : 0, _max : 0)]
     
     private var careRecipientName: String = ""
     
