@@ -30,6 +30,13 @@ extension String {
     var isNumber: Bool {
         return !isEmpty && rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
     }
+    
+    func isDouble() -> Bool {
+        if let doubleValue = Double(self) {
+            return true
+        }
+        return false
+    }
 }
 
 public extension UIDevice {

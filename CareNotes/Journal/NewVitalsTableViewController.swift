@@ -76,8 +76,8 @@ class NewVitalsTableViewController: UITableViewController {
                     let vitalValue = String(value.prefix(endIndex))
                     
                     if (curVital.getMax() != 0 || curVital.getMin() != 0) {
-                        if (!vitalValue.isNumber || (Int(vitalValue)! < curVital.getMin() || Int(vitalValue)! > curVital.getMax())) {
-                            showDialog(message: "Please enter an integer for " + vitalName + " between " + String(curVital.getMin()) + " and " + String(curVital.getMax()) + ".")
+                        if (!vitalValue.isDouble() || (Int(Double(vitalValue)!) < curVital.getMin() || Int(Double(vitalValue)!) > curVital.getMax())) {
+                            showDialog(message: "Please enter a value for " + vitalName + " between " + String(curVital.getMin()) + " and " + String(curVital.getMax()) + ".")
                             validValues = false
                         }
                     }
