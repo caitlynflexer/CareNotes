@@ -9,7 +9,7 @@ import UIKit
 
 class VitalDetailsTableViewController: UITableViewController {
     
-    var editMode = false
+    var editMode = true
     var nameChanged = false
     var unitsChanged = false
     
@@ -27,10 +27,10 @@ class VitalDetailsTableViewController: UITableViewController {
         vitalMax = DataMgr.instance().getVitals()[vitalIndex].getMax()
         vitalMin = DataMgr.instance().getVitals()[vitalIndex].getMin()
         
-        self.navigationItem.title = "Vital Details"
+        self.navigationItem.title = "Vital Details: " + vitalName
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action:#selector(UserDetailsTableViewController.back(_:)))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action:#selector(UserDetailsTableViewController.editBtnClicked(_:)))
-        self.navigationItem.leftBarButtonItem?.isEnabled = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action:#selector(UserDetailsTableViewController.editBtnClicked(_:)))
+        self.navigationItem.leftBarButtonItem?.isEnabled = false
         
         self.navigationItem.scaleText();
     }
@@ -71,7 +71,7 @@ class VitalDetailsTableViewController: UITableViewController {
     
     @objc public func textFieldDidChange(_ textField: UITextField) {
         let property : String = textField.accessibilityIdentifier!
-        var value : String = textField.text?.trim() ?? ""
+        let value : String = textField.text?.trim() ?? ""
 
         if (property == "Units") {
             DataMgr.instance().getVitals()[vitalIndex].setUnits(newUnits: value)
@@ -134,9 +134,17 @@ class VitalDetailsTableViewController: UITableViewController {
         } else if (indexPath.row == 1) {
             cell.textLabel?.text = editMode ? "Units:" : "Units: " + vitalUnits
         } else if (indexPath.row == 2) {
-            cell.textLabel?.text = editMode ? "Min:" : "Min: " + String(vitalMin)
+            if (editMode || (vitalMin == 0 && vitalMax == 0)) {
+                cell.textLabel?.text = "Min:"
+            } else {
+                cell.textLabel?.text = "Min: " + String(vitalMin)
+            }
         } else {
-            cell.textLabel?.text = editMode ? "Max:" : "Max: " + String(vitalMax)
+            if (editMode || (vitalMin == 0 && vitalMax == 0)) {
+                cell.textLabel?.text = "Max:"
+            } else {
+                cell.textLabel?.text = "Max: " + String(vitalMax)
+            }
         }
         
         if (UIDevice.isPad) {
@@ -154,10 +162,18 @@ class VitalDetailsTableViewController: UITableViewController {
                 textField.text = vitalUnits
             } else if (indexPath.row == 2) {
                 textField.accessibilityIdentifier = "Min"
-                textField.text = String(vitalMin)
+                if (vitalMin == 0 && vitalMax == 0) {
+                    textField.text = ""
+                } else {
+                    textField.text = String(vitalMin)
+                }
             } else {
                 textField.accessibilityIdentifier = "Max"
-                textField.text = String(vitalMax)
+                if (vitalMin == 0 && vitalMax == 0) {
+                    textField.text = ""
+                } else {
+                    textField.text = String(vitalMax)
+                }
             }
             textField.addTarget(self, action: #selector(VitalDetailsTableViewController.textFieldDidChange(_:)), for: .editingChanged)
             textField.keyboardType = (indexPath.row == 0) ? UIKeyboardType.default : UIKeyboardType.numbersAndPunctuation
