@@ -17,7 +17,6 @@ class ManageUsersTableViewCont: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action:#selector(ManageUsersTableViewCont.back(_:)))
         
         self.navigationItem.scaleText();
-
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
@@ -52,7 +51,7 @@ class ManageUsersTableViewCont: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var userSelected = DataMgr.instance().getUsers()[indexPath.row]
+        let userSelected = DataMgr.instance().getUsers()[indexPath.row]
         DataMgr.instance().setInspectUserId(userID: userSelected.getID())
         let newViewCont = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailsTableViewControllerID") as! UserDetailsTableViewController
         self.navigationController?.pushViewController(newViewCont, animated: true)

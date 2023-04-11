@@ -32,7 +32,7 @@ extension String {
     }
     
     func isDouble() -> Bool {
-        if let doubleValue = Double(self) {
+        if Double(self) != nil {
             return true
         }
         return false

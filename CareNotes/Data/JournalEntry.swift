@@ -116,6 +116,60 @@ public class JournalEntry {
         return displayText
     }
     
+    func getJournalEntryText() -> String {
+        var displayText = ""
+        
+        if (!text.isEmpty) {
+            displayText = text
+        }
+        if (vitals.count > 0) {
+            var vitalsString = ""
+            let numVitals = DataMgr.instance().getVitals().count
+            var allVitals : [String] = []
+
+            for i in 0...numVitals - 1 {
+                let vital : String = DataMgr.instance().getVitals()[i].getVitalName()
+                let value : String =  vitals[vital] ?? ""
+                if (!value.isEmpty) {
+                    if (!vitalsString.isEmpty) {
+                        vitalsString += ", "
+                    }
+                    vitalsString += vital + ": " + value
+                }
+                allVitals.append(vital)
+            }
+        
+            
+            for (vitalName, value) in vitals {
+                if (!allVitals.contains(vitalName)) {
+                    if (!value.isEmpty) {
+                        if (!vitalsString.isEmpty) {
+                            vitalsString += ", "
+                        }
+                        vitalsString += vitalName + ": " + value
+                    }
+                }
+            }
+            
+            if (!vitalsString.isEmpty) {
+                if (!displayText.isEmpty) {
+                    displayText += ", "
+                }
+                displayText += vitalsString
+            }
+        }
+        
+        if (symptoms.count > 0) {
+            if (displayText.isEmpty) {
+                displayText += symptoms.joined(separator: ", ")
+            } else {
+                displayText += ", " + symptoms.joined(separator: ", ")
+            }
+        }
+        
+        return "\"" + displayText + "\""
+    }
+    
     public func export() -> [String: Any] {
         var dict : [String : Any] = ["user" : user, "dateAndTime" : getDateAndTimeStr()]
         

@@ -24,11 +24,11 @@ class NewEntryViewCont: UIViewController {
             textView.font = UIFont(name: "Helvetica", size: 23)
         }
         
-        let saveButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: "saveBtnClicked:")
+        let saveButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(self.saveBtnClicked(_:)))
         saveButtonItem.isEnabled = false
         self.navigationItem.rightBarButtonItem = saveButtonItem
         
-        let backButtonItem = UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action: "back:")
+        let backButtonItem = UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action: #selector(self.back(_:)))
         self.navigationItem.leftBarButtonItem = backButtonItem
         
         self.navigationItem.title = "New Journal Entry"

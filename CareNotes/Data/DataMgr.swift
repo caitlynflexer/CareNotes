@@ -307,7 +307,7 @@ public class DataMgr {
                 if let journalData = json["Journal Entries"] as? [Any] {
                     for journal in journalData {
                         let journalInfo : [String : Any?] = journal as! [String : Any?]
-                        journalEntries.append(JournalEntry(journalInfo: journalInfo))
+                        journalEntries.append(JournalEntry(journalInfo: journalInfo as [String : Any]))
                     }
                 }
                 
@@ -325,6 +325,17 @@ public class DataMgr {
         } catch {
             print("Unable to import")
         }
+    }
+    
+    func createCSVData() -> String {
+        var allData = "Date & Time,User,Entry"
+        
+        for i in 0...journalEntries.count - 1 {
+            print(journalEntries[i].getDisplayText())
+            allData = allData + "\n" + journalEntries[i].getDateAndTimeStr() + "," + journalEntries[i].getUser() + "," + journalEntries[i].getJournalEntryText()
+        }
+        
+        return allData
     }
 }
 

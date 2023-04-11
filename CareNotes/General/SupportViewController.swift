@@ -48,16 +48,17 @@ class SupportViewController: UIViewController, UINavigationControllerDelegate, M
     }
     
     @IBAction func exportBtnClicked(_ sender: Any) {
+        let allData = DataMgr.instance().createCSVData()
+        
         if MFMailComposeViewController.canSendMail() {
             let composeVC = MFMailComposeViewController()
             composeVC.mailComposeDelegate = self
             composeVC.setToRecipients(nil)
             composeVC.setSubject("Caregiver Notes Data")
-            composeVC.setMessageBody("Attached is a JSON file containing the data from the Caregiver Notes app.", isHTML: false)
+            composeVC.setMessageBody("Attached is a CSV file containing the data from the Caregiver Notes app.", isHTML: false)
 
             do {
-                let allData = jsonToData(json: try JSONSerialization.loadJSON(withFilename: "careNotesData"))
-                composeVC.addAttachmentData(allData! as Data, mimeType: "application/json" , fileName: "careNotesData.json")
+                composeVC.addAttachmentData(Data(allData.utf8), mimeType: "text/comma-separated-values" , fileName: "careNotesAllData.csv")
                 self.present(composeVC, animated: true, completion: nil)
             } catch {
                 showErrorDlg(message: "Unable to send data")
@@ -85,15 +86,6 @@ class SupportViewController: UIViewController, UINavigationControllerDelegate, M
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
-    }
-    
-    func jsonToData(json: Any) -> Data? {
-        do {
-            return try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
-        } catch let myJSONError {
-            print(myJSONError)
-        }
-        return nil;
     }
 
 }
