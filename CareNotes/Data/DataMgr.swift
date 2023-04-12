@@ -333,7 +333,7 @@ public class DataMgr {
         if (journalEntries.count > 0) {
             for i in 0...journalEntries.count - 1 {
                 print(journalEntries[i].getDisplayText())
-                allData = allData + "\n" + journalEntries[i].getDateAndTimeStr() + "," + journalEntries[i].getUser() + "," + "\"" +  journalEntries[i].getJournalEntryText().replacingOccurrences(of: "\"", with: "\'") + "\""
+                allData = allData + "\n" + journalEntries[i].getDateAndTimeStr() + "," + journalEntries[i].getUser() + "," + "\"" +  journalEntries[i].getJournalEntryText() + "\"" 
             }
             return allData
         } else {

@@ -120,7 +120,7 @@ public class JournalEntry {
         var displayText = ""
         
         if (!text.isEmpty) {
-            displayText = text
+            displayText = text.replacingOccurrences(of: "\"", with: "\'")
         }
         if (vitals.count > 0) {
             var vitalsString = ""
@@ -138,7 +138,6 @@ public class JournalEntry {
                 }
                 allVitals.append(vital)
             }
-        
             
             for (vitalName, value) in vitals {
                 if (!allVitals.contains(vitalName)) {
