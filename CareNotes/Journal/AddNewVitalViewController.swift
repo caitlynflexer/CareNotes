@@ -11,9 +11,9 @@ class AddNewVitalViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var vitalTextField: UITextField!
     @IBOutlet weak var unitsTextField: UITextField!
+
     @IBOutlet weak var minTextField: UITextField!
     @IBOutlet weak var maxTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

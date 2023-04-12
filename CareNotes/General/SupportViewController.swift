@@ -50,22 +50,26 @@ class SupportViewController: UIViewController, UINavigationControllerDelegate, M
     @IBAction func exportBtnClicked(_ sender: Any) {
         let allData = DataMgr.instance().createCSVData()
         
-        if MFMailComposeViewController.canSendMail() {
-            let composeVC = MFMailComposeViewController()
-            composeVC.mailComposeDelegate = self
-            composeVC.setToRecipients(nil)
-            composeVC.setSubject("Caregiver Notes Data")
-            composeVC.setMessageBody("Attached is a CSV file containing the data from the Caregiver Notes app.", isHTML: false)
-
-            do {
-                composeVC.addAttachmentData(Data(allData.utf8), mimeType: "text/comma-separated-values" , fileName: "careNotesAllData.csv")
-                self.present(composeVC, animated: true, completion: nil)
-            } catch {
-                showErrorDlg(message: "Unable to send data")
+        if (allData != "") {
+            if MFMailComposeViewController.canSendMail() {
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                composeVC.setToRecipients(nil)
+                composeVC.setSubject("Caregiver Notes Data")
+                composeVC.setMessageBody("Attached is a CSV file containing the data from the Caregiver Notes app.", isHTML: false)
+                
+                do {
+                    composeVC.addAttachmentData(Data(allData.utf8), mimeType: "text/comma-separated-values" , fileName: "careNotesAllData.csv")
+                    self.present(composeVC, animated: true, completion: nil)
+                } catch {
+                    showErrorDlg(message: "Unable to send data")
+                }
+                
+            } else {
+                showErrorDlg(message: "Email is not yet set up on device")
             }
-            
         } else {
-            showErrorDlg(message: "Email is not yet set up on device")
+            showErrorDlg(message: "No journal entry data to send.")
         }
     }
     

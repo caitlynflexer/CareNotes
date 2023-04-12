@@ -167,7 +167,7 @@ public class JournalEntry {
             }
         }
         
-        return "\"" + displayText + "\""
+        return displayText
     }
     
     public func export() -> [String: Any] {

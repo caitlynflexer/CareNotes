@@ -603,7 +603,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOX-JB-KSJ">
-                                <rect key="frame" x="60" y="241" width="260" height="34"/>
+                                <rect key="frame" x="60" y="241" width="310" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -611,17 +611,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="unitsTextField:" destination="57c-du-EAE" eventType="editingDidEnd" id="drB-ni-hej"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wU3-yh-Pap">
-                                <rect key="frame" x="60" y="345" width="260" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                </variation>
-                                <connections>
-                                    <action selector="unitsTextField:" destination="57c-du-EAE" eventType="editingDidEnd" id="I2R-KR-Mv8"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6a-dt-8OR">
@@ -642,8 +631,21 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-ep-n91">
-                                <rect key="frame" x="60" y="403" width="37" height="21"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Xa-aI-0kh">
+                                <rect key="frame" x="60" y="340" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3g8-hq-UwW">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-fR-vKf">
+                                <rect key="frame" x="204" y="299" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -651,29 +653,40 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgq-HR-HNf">
-                                <rect key="frame" x="60" y="449" width="260" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zdx-3U-28T">
+                                <rect key="frame" x="204" y="340" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KvM-eu-4JF">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 </variation>
-                                <connections>
-                                    <action selector="unitsTextField:" destination="57c-du-EAE" eventType="editingDidEnd" id="Y9e-W2-h6G"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yBJ-hz-l5N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yBJ-hz-l5N" firstAttribute="trailing" secondItem="qOX-JB-KSJ" secondAttribute="trailing" constant="110" id="2LJ-a4-h65">
-                                <variation key="heightClass=regular-widthClass=regular" constant="220"/>
-                            </constraint>
-                            <constraint firstItem="aoJ-ep-n91" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="7qI-CE-XQ9">
+                            <constraint firstItem="yBJ-hz-l5N" firstAttribute="trailing" secondItem="qOX-JB-KSJ" secondAttribute="trailing" constant="60" id="2LJ-a4-h65">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
+                            </constraint>
+                            <constraint firstItem="Geg-fR-vKf" firstAttribute="leading" secondItem="OyK-Mf-szj" secondAttribute="trailing" constant="111" id="5Bt-cN-c7c">
+                                <variation key="heightClass=regular-widthClass=regular" constant="222"/>
+                            </constraint>
+                            <constraint firstItem="Geg-fR-vKf" firstAttribute="top" secondItem="qOX-JB-KSJ" secondAttribute="bottom" constant="24" id="ClJ-PT-3Nb">
+                                <variation key="heightClass=regular-widthClass=regular" constant="48"/>
                             </constraint>
                             <constraint firstItem="qOX-JB-KSJ" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="Eg7-rv-d5x">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
+                            </constraint>
+                            <constraint firstItem="Zdx-3U-28T" firstAttribute="top" secondItem="Geg-fR-vKf" secondAttribute="bottom" constant="20" id="FOk-Vu-GiB">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="OyK-Mf-szj" firstAttribute="top" secondItem="qOX-JB-KSJ" secondAttribute="bottom" constant="24" id="FSN-sB-5cu">
+                                <variation key="heightClass=regular-widthClass=regular" constant="48"/>
                             </constraint>
                             <constraint firstItem="yBJ-hz-l5N" firstAttribute="trailing" secondItem="0b1-Zi-799" secondAttribute="trailing" constant="60" id="Fql-9s-gpl">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
@@ -681,26 +694,14 @@
                             <constraint firstItem="qOX-JB-KSJ" firstAttribute="top" secondItem="0b1-Zi-799" secondAttribute="bottom" constant="66" id="Ke6-dR-P0D">
                                 <variation key="heightClass=regular-widthClass=regular" constant="132"/>
                             </constraint>
-                            <constraint firstItem="tgq-HR-HNf" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="Pem-CR-beu">
-                                <variation key="heightClass=regular-widthClass=regular" constant="120"/>
-                            </constraint>
-                            <constraint firstItem="tgq-HR-HNf" firstAttribute="top" secondItem="aoJ-ep-n91" secondAttribute="bottom" constant="25" id="QFN-et-KyK">
-                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            <constraint firstItem="Zdx-3U-28T" firstAttribute="leading" secondItem="8Xa-aI-0kh" secondAttribute="trailing" constant="44" id="QBX-xQ-7Ub">
+                                <variation key="heightClass=regular-widthClass=regular" constant="88"/>
                             </constraint>
                             <constraint firstItem="rMZ-dU-jbw" firstAttribute="top" secondItem="yBJ-hz-l5N" secondAttribute="top" constant="40" id="UEt-ae-YDF">
                                 <variation key="heightClass=regular-widthClass=regular" constant="80"/>
                             </constraint>
-                            <constraint firstItem="yBJ-hz-l5N" firstAttribute="trailing" secondItem="tgq-HR-HNf" secondAttribute="trailing" constant="110" id="ZM7-MP-0fo">
-                                <variation key="heightClass=regular-widthClass=regular" constant="220"/>
-                            </constraint>
-                            <constraint firstItem="OyK-Mf-szj" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="ZN2-c3-mN5">
+                            <constraint firstItem="OyK-Mf-szj" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="UJY-nU-toJ">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
-                            </constraint>
-                            <constraint firstItem="yBJ-hz-l5N" firstAttribute="trailing" secondItem="wU3-yh-Pap" secondAttribute="trailing" constant="110" id="ZQm-RQ-xmt">
-                                <variation key="heightClass=regular-widthClass=regular" constant="220"/>
-                            </constraint>
-                            <constraint firstItem="aoJ-ep-n91" firstAttribute="top" secondItem="wU3-yh-Pap" secondAttribute="bottom" constant="24" id="bk6-Ql-SRI">
-                                <variation key="heightClass=regular-widthClass=regular" constant="48"/>
                             </constraint>
                             <constraint firstItem="J6a-dt-8OR" firstAttribute="top" secondItem="0b1-Zi-799" secondAttribute="bottom" constant="24" id="f2V-X6-mOV">
                                 <variation key="heightClass=regular-widthClass=regular" constant="48"/>
@@ -708,14 +709,8 @@
                             <constraint firstItem="0b1-Zi-799" firstAttribute="top" secondItem="yBJ-hz-l5N" secondAttribute="top" constant="82" id="fFH-vO-TTY">
                                 <variation key="heightClass=regular-widthClass=regular" constant="164"/>
                             </constraint>
-                            <constraint firstItem="wU3-yh-Pap" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="hkB-79-8XB">
+                            <constraint firstItem="8Xa-aI-0kh" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="kS2-4s-Acm">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
-                            </constraint>
-                            <constraint firstItem="wU3-yh-Pap" firstAttribute="top" secondItem="OyK-Mf-szj" secondAttribute="bottom" constant="25" id="jda-OY-CAD">
-                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
-                            </constraint>
-                            <constraint firstItem="OyK-Mf-szj" firstAttribute="top" secondItem="qOX-JB-KSJ" secondAttribute="bottom" constant="24" id="oza-6P-Ahh">
-                                <variation key="heightClass=regular-widthClass=regular" constant="48"/>
                             </constraint>
                             <constraint firstItem="0b1-Zi-799" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="ria-qD-eM8">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
@@ -723,14 +718,17 @@
                             <constraint firstItem="rMZ-dU-jbw" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="rye-WE-D2u">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
                             </constraint>
+                            <constraint firstItem="8Xa-aI-0kh" firstAttribute="top" secondItem="OyK-Mf-szj" secondAttribute="bottom" constant="20" id="vVY-f0-1ud">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
                             <constraint firstItem="J6a-dt-8OR" firstAttribute="leading" secondItem="yBJ-hz-l5N" secondAttribute="leading" constant="60" id="ykr-Bi-03k">
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
                             </constraint>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="maxTextField" destination="tgq-HR-HNf" id="yNE-x3-a50"/>
-                        <outlet property="minTextField" destination="wU3-yh-Pap" id="V2T-IA-8Y1"/>
+                        <outlet property="maxTextField" destination="Zdx-3U-28T" id="qRi-bQ-qKL"/>
+                        <outlet property="minTextField" destination="8Xa-aI-0kh" id="Jxu-9P-Cxl"/>
                         <outlet property="unitsTextField" destination="qOX-JB-KSJ" id="Day-CU-qXZ"/>
                         <outlet property="vitalTextField" destination="0b1-Zi-799" id="dG7-dj-6vp"/>
                     </connections>
@@ -818,6 +816,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            </variation>
                                         </textField>
                                     </subviews>
                                     <constraints>
