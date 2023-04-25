@@ -14,7 +14,7 @@ class AddNewSymptomViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "Add New Symptom"
+        self.navigationItem.title = "Add New Symptom "
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action:#selector(NewVitalsTableViewController.back(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action:#selector(NewVitalsTableViewController.saveBtnClicked(_:)))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
